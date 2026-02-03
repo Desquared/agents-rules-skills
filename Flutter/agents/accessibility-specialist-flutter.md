@@ -1,5 +1,5 @@
 ---
-name: accessibility-agent
+name: accessibility-specialist
 description: Accessibility specialist for Flutter apps. Ensures TalkBack/VoiceOver support, WCAG compliance, sufficient contrast, and touch targets. Use when implementing or auditing features.
 ---
 
