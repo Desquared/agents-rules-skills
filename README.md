@@ -40,6 +40,10 @@ We aim to keep everything as library-agnostic as possible. Tweak as needed.
 	- Swift
 	- SwiftUI
 	- Xcode optimization
+- **Flutter**
+	- Dart
+	- State management agnostic (Bloc/Provider/Riverpod/GetX)
+	- Cross-platform mobile development
 
 ---
 
@@ -65,13 +69,18 @@ To integrate these into your environment (Mac/Linux):
 ### Agents
 - Android: https://github.com/Desquared/agents-rules-skills/tree/main/Android/agents
 - iOS: https://github.com/Desquared/agents-rules-skills/tree/main/iOS/agents
+- Flutter: https://github.com/Desquared/agents-rules-skills/tree/main/Flutter/agents
 
 ### Skills
 - Android: https://github.com/Desquared/agents-rules-skills/tree/main/Android/skills
 - iOS: https://github.com/Desquared/agents-rules-skills/tree/main/iOS/skills
+- Flutter: https://github.com/Desquared/agents-rules-skills/tree/main/Flutter/skills
+- Shared: https://github.com/Desquared/agents-rules-skills/tree/main/skills
 
 ### Rules
-Rules are currently shared patterns for mobile platforms and live inside each platform folder.
+- Android: https://github.com/Desquared/agents-rules-skills/tree/main/Android/rules
+- iOS: https://github.com/Desquared/agents-rules-skills/tree/main/iOS/rules
+- Flutter: https://github.com/Desquared/agents-rules-skills/tree/main/Flutter/rules
 
 ---
 
@@ -84,3 +93,4 @@ Rules are currently shared patterns for mobile platforms and live inside each pl
 - https://dev.to/onlyoneaman/building-agent-skills-from-scratch-lbl
 - https://developers.openai.com/codex/skills/
 - https://github.com/agentskills/agentskills
+- https://docs.flutter.dev/ai/ai-rules
