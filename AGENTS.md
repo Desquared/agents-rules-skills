@@ -19,14 +19,14 @@ curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/
 
 ### Flutter
 
-- [flutter-accessibility-specialist-flutter.md](agents/flutter-accessibility-specialist-flutter.md): Accessibility specialist for Flutter apps.
+- [flutter-accessibility-specialist.md](agents/flutter-accessibility-specialist.md): Accessibility specialist for Flutter apps.
 - [flutter-agent-guidelines.md](agents/flutter-agent-guidelines.md): Flutter Agent Guidelines.
-- [flutter-bug-solver-flutter.md](agents/flutter-bug-solver-flutter.md): Scientific method expert for systematic bug investigation.
-- [flutter-code-reviewer-flutter.md](agents/flutter-code-reviewer-flutter.md): Code review specialist for Flutter features.
-- [flutter-feature-analyst-flutter.md](agents/flutter-feature-analyst-flutter.md): Feature analysis specialist.
-- [flutter-performance-optimizer-flutter.md](agents/flutter-performance-optimizer-flutter.md): Flutter performance specialist for profiling, optimization, and efficiency.
-- [flutter-project-architecture-analyst-flutter.md](agents/flutter-project-architecture-analyst-flutter.md): Architecture planner for new features.
-- [flutter-refactoring-specialist-flutter.md](agents/flutter-refactoring-specialist-flutter.md): Specialized agent for migrating legacy code to data/domain/view structure.
+- [flutter-bug-solver.md](agents/flutter-bug-solver.md): Scientific method expert for systematic bug investigation.
+- [flutter-code-reviewer.md](agents/flutter-code-reviewer.md): Code review specialist for Flutter features.
+- [flutter-feature-analyst.md](agents/flutter-feature-analyst.md): Feature analysis specialist.
+- [flutter-performance-optimizer.md](agents/flutter-performance-optimizer.md): Flutter performance specialist for profiling, optimization, and efficiency.
+- [flutter-project-architecture-analyst.md](agents/flutter-project-architecture-analyst.md): Architecture planner for new features.
+- [flutter-refactoring-specialist.md](agents/flutter-refactoring-specialist.md): Specialized agent for migrating legacy code to data/domain/view structure.
 
 ### iOS
 
@@ -44,14 +44,14 @@ curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/
 
 ### Android
 
-- [android-accessibility-specialist-android.md](agents/android-accessibility-specialist-android.md): Android accessibility expert for TalkBack, Dynamic Text, color contrast, and assistive technologies.
+- [android-accessibility-specialist.md](agents/android-accessibility-specialist.md): Android accessibility expert for TalkBack, Dynamic Text, color contrast, and assistive technologies.
 - [android-agent-guidelines.md](agents/android-agent-guidelines.md): Android Agent Guidelines.
-- [android-build-error-resolver-android.md](agents/android-build-error-resolver-android.md): Android/Gradle build error specialist.
-- [android-compose-layout-specialist-android.md](agents/android-compose-layout-specialist-android.md): Expert Jetpack Compose layout specialist for complex layouts, custom modifiers, measurement/layout, and responsive design.
-- [android-concurrency-networking-agent-android.md](agents/android-concurrency-networking-agent-android.md): Expert in Kotlin coroutines and networking.
-- [android-performance-optimizer-android.md](agents/android-performance-optimizer-android.md): Android performance specialist for profiling, optimization, and efficiency.
-- [android-persistence-specialist-android.md](agents/android-persistence-specialist-android.md): Room / Realm / DataStore specialist.
-- [android-project-architecture-analyst-android.md](agents/android-project-architecture-analyst-android.md): Architecture analyst for planning new features and core changes.
-- [android-security-reviewer-android.md](agents/android-security-reviewer-android.md): Android security specialist for code auditing.
-- [android-testing-qa-agent-android.md](agents/android-testing-qa-agent-android.md): Expert testing and quality assurance specialist for JUnit, Espresso, Compose UI testing, MockK, test-driven development, and code coverage.
-- [android-ux-ui-design-agent-android.md](agents/android-ux-ui-design-agent-android.md): UX/UI design specialist focused on user experience, Material Design compliance, user flow optimization, and modern Android design patterns.
+- [android-build-error-resolver.md](agents/android-build-error-resolver.md): Android/Gradle build error specialist.
+- [android-compose-layout-specialist.md](agents/android-compose-layout-specialist.md): Expert Jetpack Compose layout specialist for complex layouts, custom modifiers, measurement/layout, and responsive design.
+- [android-concurrency-networking-agent.md](agents/android-concurrency-networking-agent.md): Expert in Kotlin coroutines and networking.
+- [android-performance-optimizer.md](agents/android-performance-optimizer.md): Android performance specialist for profiling, optimization, and efficiency.
+- [android-persistence-specialist.md](agents/android-persistence-specialist.md): Room / Realm / DataStore specialist.
+- [android-project-architecture-analyst.md](agents/android-project-architecture-analyst.md): Architecture analyst for planning new features and core changes.
+- [android-security-reviewer.md](agents/android-security-reviewer.md): Android security specialist for code auditing.
+- [android-testing-qa-agent.md](agents/android-testing-qa-agent.md): Expert testing and quality assurance specialist for JUnit, Espresso, Compose UI testing, MockK, test-driven development, and code coverage.
+- [android-ux-ui-design-agent.md](agents/android-ux-ui-design-agent.md): UX/UI design specialist focused on user experience, Material Design compliance, user flow optimization, and modern Android design patterns.
