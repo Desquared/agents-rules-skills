@@ -1,96 +1,80 @@
 # Agents, Rules & Skills for Mobile Development
 
-A standardized, tool-agnostic framework for autonomous mobile development. By separating logic into **Agents**, **Rules**, and **Skills**, AI models can execute complex tasks with minimal token consumption and maximum consistency.
+Ship better mobile code with AI out of the box.
 
-## What’s inside
+This repository gives AI assistants specialized mobile expertise for Android, iOS, and Flutter through three building blocks:
 
-### Agents
-Autonomous assistants that can execute multi-step workflows (for example, generating code, refactoring, running checks, and preparing PR-ready output) with limited supervision.
+- Skills: reusable capabilities (architecture, testing, performance, accessibility, security).
+- Rules: coding guardrails and standards.
+- Agents: role-based specialists for focused tasks.
 
-### Rules
-Guardrails and standards that keep outputs consistent and safe (coding conventions, architecture constraints, security checks, team practices).
+## Start Here
 
-### Skills
-Reusable, modular capabilities that agents can call to perform specific tasks (testing, deployment steps, database queries, scaffolding, and other repeatable workflows).
+If you only do one thing, install skills first:
 
-> **Tip:** Keep instructions clear and concise. Models already know how to write code. These files should encode your project-specific guardrails.
+```bash
+npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-bug-investigation
+```
 
----
+Then pick your path:
 
-## Supported tools
+| I want to... | Go to |
+|---|---|
+| Install and browse all skills | [SKILLS.md](SKILLS.md) |
+| Browse and manually install rules | [RULES.md](RULES.md) |
+| Browse and manually install agents | [AGENTS.md](AGENTS.md) |
 
-This structure is known to work well with:
-- **Claude**
-- **Cursor**
-- **Copilot CLI**
-
-It can also be adapted for **VS Code**, following the same structure and access patterns.
-
----
-
-## Directory structure
-
-We aim to keep everything as library-agnostic as possible. Tweak as needed.
-
-- **Android**
-	- Kotlin
-	- Compose Multiplatform
-	- KMP-specific logic
-- **iOS**
-	- Swift
-	- SwiftUI
-	- Xcode optimization
-- **Flutter**
-	- Dart
-	- State management agnostic (Bloc/Provider/Riverpod/GetX)
-	- Cross-platform mobile development
-
----
-
-## Installation
-
-To integrate these into your environment (Mac/Linux):
-
-1. Locate your AI tool configuration folder:
-	- Cursor: `~/.cursor`
-	- Claude: `~/.claude`
-	- Copilot CLI: (your local Copilot config directory)
-
-2. Copy the relevant `.md` files into the appropriate folders.
-
-3. Keep instructions short and focused on your project constraints.
-
-**Mac Finder tip:** Press `command + shift + .` to show or hide hidden folders.
-
----
-
-## Links
-
-### Agents
-- Android: https://github.com/Desquared/agents-rules-skills/tree/main/Android/agents
-- iOS: https://github.com/Desquared/agents-rules-skills/tree/main/iOS/agents
-- Flutter: https://github.com/Desquared/agents-rules-skills/tree/main/Flutter/agents
+## Installation Model
 
 ### Skills
-- Android: https://github.com/Desquared/agents-rules-skills/tree/main/Android/skills
-- iOS: https://github.com/Desquared/agents-rules-skills/tree/main/iOS/skills
-- Flutter: https://github.com/Desquared/agents-rules-skills/tree/main/Flutter/skills
-- Shared: https://github.com/Desquared/agents-rules-skills/tree/main/skills
 
-### Rules
-- Android: https://github.com/Desquared/agents-rules-skills/tree/main/Android/rules
-- iOS: https://github.com/Desquared/agents-rules-skills/tree/main/iOS/rules
-- Flutter: https://github.com/Desquared/agents-rules-skills/tree/main/Flutter/rules
+Skills follow the Agent Skills standard and can be installed directly with `npx skills add`.
 
----
+- Full catalog + install-all commands: [SKILLS.md](SKILLS.md)
+
+### Rules and Agents
+
+Rules and agents do not have one universal cross-tool CLI standard yet, so installation is manual.
+
+- Rules manual install guide: [RULES.md](RULES.md)
+- Agents manual install guide: [AGENTS.md](AGENTS.md)
+
+Quick manual examples:
+
+```bash
+# Rule -> Cursor project rules
+mkdir -p .cursor/rules
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  -o .cursor/rules/ios-code-review.md
+
+# Agent -> Claude local agents
+mkdir -p ~/.claude/agents
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/agents/ios-security-reviewer.md \
+  -o ~/.claude/agents/ios-security-reviewer.md
+```
+
+## Why Teams Use This Repo
+
+- Faster onboarding for AI-assisted workflows.
+- Consistent output quality across projects and developers.
+- Practical, battle-tested mobile guidance instead of generic prompts.
+
+## Repository Structure
+
+Canonical install targets are top-level directories:
+
+```text
+skills/
+rules/
+agents/
+```
+
+Platform is encoded in filenames (`ios-`, `android-`, `flutter-`) where relevant.
 
 ## References
 
 - https://agentskills.io/specification
+- https://github.com/agentskills/agentskills
 - https://cursor.com/blog/agent-best-practices
 - https://www.builder.io/blog/agent-skills-rules-commands
-- https://opencode.ai/docs/rules/
-- https://dev.to/onlyoneaman/building-agent-skills-from-scratch-lbl
 - https://developers.openai.com/codex/skills/
-- https://github.com/agentskills/agentskills
-- https://docs.flutter.dev/ai/ai-rules
