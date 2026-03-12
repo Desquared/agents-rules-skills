@@ -1,0 +1,23 @@
+{
+  "name": "agent-skills-install",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "agent-skills": "bin/install.js"
+  },
+  "scripts": {
+    "start": "node bin/install.js",
+    "docs:export": "node bin/export-docs.js",
+    "docs:watch": "node bin/export-docs.js --watch"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.17"
+  }
+}

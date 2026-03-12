@@ -71,6 +71,14 @@ agents/
 
 Platform is encoded in filenames (`ios-`, `android-`, `flutter-`) where relevant.
 
+## Keeping Docs Updated
+
+This repository includes an exporter that regenerates all docs from current files.
+
+```bash
+npm run docs:export
+```
+
 ## References
 
 - https://agentskills.io/specification
