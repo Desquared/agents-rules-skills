@@ -85,13 +85,34 @@ function platformFromName(name) {
 function groupedByPlatform(items) {
   const groups = { shared: [], flutter: [], ios: [], android: [], other: [] };
   for (const item of items) {
-    groups[platformFromName(item.name)].push(item);
+    const platform = item.platform && groups[item.platform] !== undefined ? item.platform : platformFromName(item.name);
+    groups[platform].push(item);
   }
   return groups;
 }
 
 function titleCasePlatform(key) {
   return PLATFORM_LABELS[key] || 'Other';
+}
+
+function loadExternalSkills() {
+  const externalPath = path.join(repoRoot, 'external-skills.json');
+  if (!fs.existsSync(externalPath)) return [];
+  try {
+    const data = JSON.parse(fs.readFileSync(externalPath, 'utf8'));
+    return data.map((s) => ({
+      name: s.name,
+      description: s.description || 'No description provided.',
+      sourcePath: null,
+      platform: s.platform,
+      external: true,
+      repo: s.repo,
+      skillPath: s.skillPath || 'SKILL.md',
+      author: s.author || null,
+    }));
+  } catch {
+    return [];
+  }
 }
 
 function buildSkillsData() {
@@ -166,9 +187,9 @@ function buildManifest(rules, agents) {
 
 function renderSkillsMd(skills) {
   const groups = groupedByPlatform(skills);
-  const flutter = groups.flutter.map((s) => s.name);
-  const ios = groups.ios.map((s) => s.name);
-  const android = groups.android.map((s) => s.name);
+  const flutter = groups.flutter.filter((s) => !s.external).map((s) => s.name);
+  const ios = groups.ios.filter((s) => !s.external).map((s) => s.name);
+  const android = groups.android.filter((s) => !s.external).map((s) => s.name);
 
   const nav = PLATFORM_ORDER.filter((k) => groups[k].length > 0)
     .map((k) => `- [${titleCasePlatform(k)}](#${titleCasePlatform(k).toLowerCase().replace(/[^a-z0-9]+/g, '-')})`)
@@ -176,10 +197,14 @@ function renderSkillsMd(skills) {
 
   const renderTable = (items) => {
     const rows = items
-      .map(
-        (s) =>
-          `| ${s.name} | ${s.description} | \`npx skills add ${REPO_URL} --skill ${s.name}\` | [SKILL.md](${s.sourcePath}) |`
-      )
+      .map((s) => {
+        if (s.external) {
+          const sourceUrl = `${s.repo}/blob/main/${s.skillPath}`;
+          const nameCell = s.author ? `${s.name} *(by ${s.author})*` : s.name;
+          return `| ${nameCell} | ${s.description} | \`npx skills add ${s.repo}\` | [SKILL.md](${sourceUrl}) |`;
+        }
+        return `| ${s.name} | ${s.description} | \`npx skills add ${REPO_URL} --skill ${s.name}\` | [SKILL.md](${s.sourcePath}) |`;
+      })
       .join('\n');
 
     return `| Skill | Description | Install | Source |\n|---|---|---|---|\n${rows}`;
@@ -600,11 +625,13 @@ npm run docs:export
 }
 
 function exportAll() {
-  const skills = buildSkillsData();
+  const localSkills = buildSkillsData();
+  const externalSkills = loadExternalSkills();
+  const skills = [...localSkills, ...externalSkills];
   const rules = buildRulesData();
   const agents = buildAgentsData();
 
-  if (skills.length === 0) {
+  if (localSkills.length === 0) {
     throw new Error('No skills found under skills/*/SKILL.md');
   }
 

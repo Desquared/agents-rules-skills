@@ -1,0 +1,10 @@
+[
+  {
+    "name": "swiftui-agent",
+    "description": "Use when building SwiftUI views, composing layouts, managing state, or applying modern SwiftUI patterns across iOS, macOS, watchOS, and tvOS apps.",
+    "platform": "ios",
+    "repo": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+    "skillPath": "SKILL.md",
+    "author": "twostraws"
+  }
+]

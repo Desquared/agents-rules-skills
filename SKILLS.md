@@ -101,6 +101,7 @@ done
 | ios-performance-profiler | Identifies potential performance bottlenecks in SwiftUI code including expensive view updates, unnecessary redraws, and memory issues. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-performance-profiler` | [SKILL.md](skills/ios-performance-profiler/SKILL.md) |
 | ios-swift-api-design-reviewer | Review function and class interfaces for Swift API Design Guidelines compliance. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-swift-api-design-reviewer` | [SKILL.md](skills/ios-swift-api-design-reviewer/SKILL.md) |
 | ios-swiftui-architecture-review | Analyze SwiftUI view hierarchies and suggest MVVM or other architectural improvements. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-swiftui-architecture-review` | [SKILL.md](skills/ios-swiftui-architecture-review/SKILL.md) |
+| swiftui-agent *(by twostraws)* | Use when building SwiftUI views, composing layouts, managing state, or applying modern SwiftUI patterns across iOS, macOS, watchOS, and tvOS apps. | `npx skills add https://github.com/twostraws/SwiftUI-Agent-Skill` | [SKILL.md](https://github.com/twostraws/SwiftUI-Agent-Skill/blob/main/SKILL.md) |
 
 ### Android
 
