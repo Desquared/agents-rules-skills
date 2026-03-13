@@ -1,6 +1,6 @@
 ---
 name: flutter-code-review
-description: Code review checklist. 7 criteria with severity levels.
+description: Use when reviewing Flutter code for correctness, architecture compliance, design system usage, linting, or testing coverage. Also use before merging a PR or when the user asks for a code review of Dart or Flutter files.
 ---
 
 # Code Review Skill

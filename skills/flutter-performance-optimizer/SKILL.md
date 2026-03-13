@@ -1,6 +1,6 @@
 ---
 name: flutter-performance-optimizer
-description: Performance optimization patterns. Reduce jank, prevent leaks.
+description: Use when Flutter UI has jank, slow scrolling, excessive rebuilds, or memory leaks. Also use when optimizing lists, animations, or complex widget trees, or when the user asks about Flutter rendering performance.
 ---
 
 # Optimization Skill

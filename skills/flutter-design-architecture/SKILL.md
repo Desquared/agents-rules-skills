@@ -1,6 +1,6 @@
 ---
 name: flutter-design-architecture
-description: data/domain/view structure templates. Project organization & scaffolding reference.
+description: Use when scaffolding a new Flutter feature, setting up the data/domain/view folder structure, creating datasources, DTOs, repositories, or state management classes, or when the user asks how to organize a Flutter project.
 ---
 
 # Design Architecture Skill

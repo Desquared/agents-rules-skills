@@ -1,6 +1,6 @@
 ---
 name: flutter-feature-analysis
-description: Feature feasibility analysis framework. Complexity assessment.
+description: Use when assessing feasibility or complexity of a new Flutter feature before implementation. Especially when evaluating API requirements, state management approach, UI component availability, native dependencies, or effort estimation.
 ---
 
 # Feature Analysis Skill

@@ -85,13 +85,13 @@ done
 
 | Skill | Description | Install | Source |
 |---|---|---|---|
-| flutter-accessibility-validator | Flutter accessibility quick reference. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-accessibility-validator` | [SKILL.md](skills/flutter-accessibility-validator/SKILL.md) |
-| flutter-bug-investigation | Flutter-specific bug patterns. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-bug-investigation` | [SKILL.md](skills/flutter-bug-investigation/SKILL.md) |
-| flutter-code-review | Code review checklist. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-code-review` | [SKILL.md](skills/flutter-code-review/SKILL.md) |
-| flutter-design-architecture | data/domain/view structure templates. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-design-architecture` | [SKILL.md](skills/flutter-design-architecture/SKILL.md) |
-| flutter-feature-analysis | Feature feasibility analysis framework. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-feature-analysis` | [SKILL.md](skills/flutter-feature-analysis/SKILL.md) |
-| flutter-feature-implementation | Implementation checklist. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-feature-implementation` | [SKILL.md](skills/flutter-feature-implementation/SKILL.md) |
-| flutter-performance-optimizer | Performance optimization patterns. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-performance-optimizer` | [SKILL.md](skills/flutter-performance-optimizer/SKILL.md) |
+| flutter-accessibility-validator | Use when creating or modifying Flutter UI components, screens, or widgets, or when the user asks about accessibility, screen reader support, VoiceOver, TalkBack, touch targets, color contrast, or WCAG compliance in a Flutter app. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-accessibility-validator` | [SKILL.md](skills/flutter-accessibility-validator/SKILL.md) |
+| flutter-bug-investigation | Use when investigating bugs, crashes, or unexpected behavior in a Flutter app. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-bug-investigation` | [SKILL.md](skills/flutter-bug-investigation/SKILL.md) |
+| flutter-code-review | Use when reviewing Flutter code for correctness, architecture compliance, design system usage, linting, or testing coverage. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-code-review` | [SKILL.md](skills/flutter-code-review/SKILL.md) |
+| flutter-design-architecture | Use when scaffolding a new Flutter feature, setting up the data/domain/view folder structure, creating datasources, DTOs, repositories, or state management classes, or when the user asks how to organize a Flutter project. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-design-architecture` | [SKILL.md](skills/flutter-design-architecture/SKILL.md) |
+| flutter-feature-analysis | Use when assessing feasibility or complexity of a new Flutter feature before implementation. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-feature-analysis` | [SKILL.md](skills/flutter-feature-analysis/SKILL.md) |
+| flutter-feature-implementation | Use when implementing a Flutter feature from scratch or completing one in progress. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-feature-implementation` | [SKILL.md](skills/flutter-feature-implementation/SKILL.md) |
+| flutter-performance-optimizer | Use when Flutter UI has jank, slow scrolling, excessive rebuilds, or memory leaks. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill flutter-performance-optimizer` | [SKILL.md](skills/flutter-performance-optimizer/SKILL.md) |
 
 ### iOS
 

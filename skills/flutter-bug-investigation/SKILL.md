@@ -1,6 +1,6 @@
 ---
 name: flutter-bug-investigation
-description: Flutter-specific bug patterns. Extends shared-bug-investigation skill.
+description: Use when investigating bugs, crashes, or unexpected behavior in a Flutter app. Especially when issues involve Bloc state not emitting, null safety errors, BuildContext after async, GetIt DI failures, method channel mismatches, widget rebuilds, or memory leaks.
 ---
 
 # Bug Solving Skill (Flutter)

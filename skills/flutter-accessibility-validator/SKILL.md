@@ -1,6 +1,6 @@
 ---
 name: flutter-accessibility-validator
-description: Flutter accessibility quick reference. Semantics, WCAG compliance, screen readers.
+description: Use when creating or modifying Flutter UI components, screens, or widgets, or when the user asks about accessibility, screen reader support, VoiceOver, TalkBack, touch targets, color contrast, or WCAG compliance in a Flutter app.
 ---
 
 # Accessibility Skill

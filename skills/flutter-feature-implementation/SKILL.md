@@ -1,6 +1,6 @@
 ---
 name: flutter-feature-implementation
-description: Implementation checklist. Coding standards, DI, testing.
+description: Use when implementing a Flutter feature from scratch or completing one in progress. Covers file structure, design system compliance, state management setup, error handling, testing, and build_runner requirements.
 ---
 
 # Feature Implementation Skill
