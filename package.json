@@ -1,14 +1,18 @@
 {
-  "name": "agent-skills-install",
+  "name": "agents-rules-skills",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "license": "MIT",
   "bin": {
-    "agent-skills": "bin/install.js"
+    "agents-rules-skills": "bin/setup.js",
+    "install-agents": "bin/install-agents.js",
+    "install-rules": "bin/install-rules.js"
   },
   "scripts": {
-    "start": "node bin/install.js",
+    "start": "node bin/setup.js",
+    "install-agents": "node bin/install-agents.js",
+    "install-rules": "node bin/install-rules.js",
     "docs:export": "node bin/export-docs.js",
     "docs:watch": "node bin/export-docs.js --watch"
   },

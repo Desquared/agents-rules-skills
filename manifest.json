@@ -1,0 +1,343 @@
+{
+  "generatedAt": "2026-03-13T08:28:49.274Z",
+  "rules": [
+    {
+      "name": "android-agent-orchestration",
+      "file": "rules/android-agent-orchestration.md",
+      "platform": "android",
+      "description": "Agent Orchestration."
+    },
+    {
+      "name": "android-ask",
+      "file": "rules/android-ask.md",
+      "platform": "android",
+      "description": "Third-Party Libraries."
+    },
+    {
+      "name": "android-code-review",
+      "file": "rules/android-code-review.md",
+      "platform": "android",
+      "description": "Code Review Checklist."
+    },
+    {
+      "name": "android-project-arch",
+      "file": "rules/android-project-arch.md",
+      "platform": "android",
+      "description": "Project Architecture."
+    },
+    {
+      "name": "android-security-practices",
+      "file": "rules/android-security-practices.md",
+      "platform": "android",
+      "description": "Security Best Practices."
+    },
+    {
+      "name": "android-style",
+      "file": "rules/android-style.md",
+      "platform": "android",
+      "description": "Android Style Guide."
+    },
+    {
+      "name": "android-ux-design-system",
+      "file": "rules/android-ux-design-system.md",
+      "platform": "android",
+      "description": "UX & Design System."
+    },
+    {
+      "name": "android-validation-testing",
+      "file": "rules/android-validation-testing.md",
+      "platform": "android",
+      "description": "Validation & Testing."
+    },
+    {
+      "name": "flutter-accessibility",
+      "file": "rules/flutter-accessibility.md",
+      "platform": "flutter",
+      "description": "Accessibility (A11Y)."
+    },
+    {
+      "name": "flutter-architecture",
+      "file": "rules/flutter-architecture.md",
+      "platform": "flutter",
+      "description": "Application Architecture."
+    },
+    {
+      "name": "flutter-core-principles",
+      "file": "rules/flutter-core-principles.md",
+      "platform": "flutter",
+      "description": "Core Flutter Principles."
+    },
+    {
+      "name": "flutter-dart-best-practices",
+      "file": "rules/flutter-dart-best-practices.md",
+      "platform": "flutter",
+      "description": "Dart Best Practices."
+    },
+    {
+      "name": "flutter-data-serialization",
+      "file": "rules/flutter-data-serialization.md",
+      "platform": "flutter",
+      "description": "Data Handling & Serialization."
+    },
+    {
+      "name": "flutter-flutter-best-practices",
+      "file": "rules/flutter-flutter-best-practices.md",
+      "platform": "flutter",
+      "description": "Flutter Best Practices."
+    },
+    {
+      "name": "flutter-layout-ui",
+      "file": "rules/flutter-layout-ui.md",
+      "platform": "flutter",
+      "description": "Layout & UI Components."
+    },
+    {
+      "name": "flutter-lint-rules",
+      "file": "rules/flutter-lint-rules.md",
+      "platform": "flutter",
+      "description": "Linting & Analysis Rules."
+    },
+    {
+      "name": "flutter-testing",
+      "file": "rules/flutter-testing.md",
+      "platform": "flutter",
+      "description": "Testing."
+    },
+    {
+      "name": "ios-agent-orchestration",
+      "file": "rules/ios-agent-orchestration.md",
+      "platform": "ios",
+      "description": "Agent Orchestration."
+    },
+    {
+      "name": "ios-ask",
+      "file": "rules/ios-ask.md",
+      "platform": "ios",
+      "description": "Third-Party Libraries."
+    },
+    {
+      "name": "ios-code-review",
+      "file": "rules/ios-code-review.md",
+      "platform": "ios",
+      "description": "Code Review Checklist."
+    },
+    {
+      "name": "ios-modern-swift",
+      "file": "rules/ios-modern-swift.md",
+      "platform": "ios",
+      "description": "Modern Swift & iOS."
+    },
+    {
+      "name": "ios-project-arch",
+      "file": "rules/ios-project-arch.md",
+      "platform": "ios",
+      "description": "Project Architecture."
+    },
+    {
+      "name": "ios-security-practices",
+      "file": "rules/ios-security-practices.md",
+      "platform": "ios",
+      "description": "Security Best Practices."
+    },
+    {
+      "name": "ios-swift-style",
+      "file": "rules/ios-swift-style.md",
+      "platform": "ios",
+      "description": "Swift Style Guide Compliance."
+    },
+    {
+      "name": "ios-ux-design-system",
+      "file": "rules/ios-ux-design-system.md",
+      "platform": "ios",
+      "description": "UX & Design System."
+    },
+    {
+      "name": "ios-validation-testing",
+      "file": "rules/ios-validation-testing.md",
+      "platform": "ios",
+      "description": "Validation & Testing."
+    }
+  ],
+  "agents": [
+    {
+      "name": "android-accessibility-specialist",
+      "file": "agents/android-accessibility-specialist.md",
+      "platform": "android",
+      "description": "Android accessibility expert for TalkBack, Dynamic Text, color contrast, and assistive technologies."
+    },
+    {
+      "name": "android-agent-guidelines",
+      "file": "agents/android-agent-guidelines.md",
+      "platform": "android",
+      "description": "Android Agent Guidelines."
+    },
+    {
+      "name": "android-build-error-resolver",
+      "file": "agents/android-build-error-resolver.md",
+      "platform": "android",
+      "description": "Android/Gradle build error specialist."
+    },
+    {
+      "name": "android-compose-layout-specialist",
+      "file": "agents/android-compose-layout-specialist.md",
+      "platform": "android",
+      "description": "Expert Jetpack Compose layout specialist for complex layouts, custom modifiers, measurement/layout, and responsive design."
+    },
+    {
+      "name": "android-concurrency-networking-agent",
+      "file": "agents/android-concurrency-networking-agent.md",
+      "platform": "android",
+      "description": "Expert in Kotlin coroutines and networking."
+    },
+    {
+      "name": "android-performance-optimizer",
+      "file": "agents/android-performance-optimizer.md",
+      "platform": "android",
+      "description": "Android performance specialist for profiling, optimization, and efficiency."
+    },
+    {
+      "name": "android-persistence-specialist",
+      "file": "agents/android-persistence-specialist.md",
+      "platform": "android",
+      "description": "Room / Realm / DataStore specialist."
+    },
+    {
+      "name": "android-project-architecture-analyst",
+      "file": "agents/android-project-architecture-analyst.md",
+      "platform": "android",
+      "description": "Architecture analyst for planning new features and core changes."
+    },
+    {
+      "name": "android-security-reviewer",
+      "file": "agents/android-security-reviewer.md",
+      "platform": "android",
+      "description": "Android security specialist for code auditing."
+    },
+    {
+      "name": "android-testing-qa-agent",
+      "file": "agents/android-testing-qa-agent.md",
+      "platform": "android",
+      "description": "Expert testing and quality assurance specialist for JUnit, Espresso, Compose UI testing, MockK, test-driven development, and code coverage."
+    },
+    {
+      "name": "android-ux-ui-design-agent",
+      "file": "agents/android-ux-ui-design-agent.md",
+      "platform": "android",
+      "description": "UX/UI design specialist focused on user experience, Material Design compliance, user flow optimization, and modern Android design patterns."
+    },
+    {
+      "name": "flutter-accessibility-specialist",
+      "file": "agents/flutter-accessibility-specialist.md",
+      "platform": "flutter",
+      "description": "Accessibility specialist for Flutter apps."
+    },
+    {
+      "name": "flutter-agent-guidelines",
+      "file": "agents/flutter-agent-guidelines.md",
+      "platform": "flutter",
+      "description": "Flutter Agent Guidelines."
+    },
+    {
+      "name": "flutter-bug-solver",
+      "file": "agents/flutter-bug-solver.md",
+      "platform": "flutter",
+      "description": "Scientific method expert for systematic bug investigation."
+    },
+    {
+      "name": "flutter-code-reviewer",
+      "file": "agents/flutter-code-reviewer.md",
+      "platform": "flutter",
+      "description": "Code review specialist for Flutter features."
+    },
+    {
+      "name": "flutter-feature-analyst",
+      "file": "agents/flutter-feature-analyst.md",
+      "platform": "flutter",
+      "description": "Feature analysis specialist."
+    },
+    {
+      "name": "flutter-performance-optimizer",
+      "file": "agents/flutter-performance-optimizer.md",
+      "platform": "flutter",
+      "description": "Flutter performance specialist for profiling, optimization, and efficiency."
+    },
+    {
+      "name": "flutter-project-architecture-analyst",
+      "file": "agents/flutter-project-architecture-analyst.md",
+      "platform": "flutter",
+      "description": "Architecture planner for new features."
+    },
+    {
+      "name": "flutter-refactoring-specialist",
+      "file": "agents/flutter-refactoring-specialist.md",
+      "platform": "flutter",
+      "description": "Specialized agent for migrating legacy code to data/domain/view structure."
+    },
+    {
+      "name": "ios-accessibility-specialist",
+      "file": "agents/ios-accessibility-specialist.md",
+      "platform": "ios",
+      "description": "iOS accessibility expert for VoiceOver, Dynamic Type, color contrast, and assistive technologies."
+    },
+    {
+      "name": "ios-agent-guidelines",
+      "file": "agents/ios-agent-guidelines.md",
+      "platform": "ios",
+      "description": "iOS Agent Guidelines."
+    },
+    {
+      "name": "ios-build-error-resolver",
+      "file": "agents/ios-build-error-resolver.md",
+      "platform": "ios",
+      "description": "Xcode build error specialist."
+    },
+    {
+      "name": "ios-concurrency-networking-agent",
+      "file": "agents/ios-concurrency-networking-agent.md",
+      "platform": "ios",
+      "description": "Expert in Swift concurrency and networking."
+    },
+    {
+      "name": "ios-coredata-swiftdata-specialist",
+      "file": "agents/ios-coredata-swiftdata-specialist.md",
+      "platform": "ios",
+      "description": "Core Data / SwiftData specialist."
+    },
+    {
+      "name": "ios-performance-optimizer",
+      "file": "agents/ios-performance-optimizer.md",
+      "platform": "ios",
+      "description": "iOS performance specialist for profiling, optimization, and efficiency."
+    },
+    {
+      "name": "ios-project-architecture-analyst",
+      "file": "agents/ios-project-architecture-analyst.md",
+      "platform": "ios",
+      "description": "Architecture analyst for planning new features and core changes."
+    },
+    {
+      "name": "ios-security-reviewer",
+      "file": "agents/ios-security-reviewer.md",
+      "platform": "ios",
+      "description": "iOS security specialist for code auditing."
+    },
+    {
+      "name": "ios-swiftui-layout-specialist",
+      "file": "agents/ios-swiftui-layout-specialist.md",
+      "platform": "ios",
+      "description": "Expert SwiftUI layout specialist for complex layouts, custom view modifiers, geometry calculations, and responsive design."
+    },
+    {
+      "name": "ios-testing-qa-agent",
+      "file": "agents/ios-testing-qa-agent.md",
+      "platform": "ios",
+      "description": "Expert testing and quality assurance specialist for XCTest, UI testing, mocking strategies, test-driven development, and code coverage."
+    },
+    {
+      "name": "ios-ux-ui-design-agent",
+      "file": "agents/ios-ux-ui-design-agent.md",
+      "platform": "ios",
+      "description": "UX/UI design specialist focused on user experience, design system compliance, user flow optimization, and modern iOS design patterns."
+    }
+  ]
+}

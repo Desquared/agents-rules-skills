@@ -1,18 +1,78 @@
 # Rules Catalog
 
-Rules are manual-install artifacts (no universal cross-tool install standard yet).
+Rules are plain Markdown files. Every major AI coding tool supports them — the only difference is where each tool looks for them.
 
-## How To Install A Rule
+## Quick Install
 
-1. Pick a rule file from the catalog below.
-2. Copy it into your tool's rules folder.
-
-Example (Cursor project rules):
+The interactive installer handles all IDE paths for you:
 
 ```bash
+npx github:Desquared/agents-rules-skills install-rules
+```
+
+Pick your IDE(s), choose a scope (project or global), filter by platform, and the installer places them in the right location automatically.
+
+## Manual Install
+
+Pick a rule file, then copy it to your tool's expected location.
+
+### Cursor
+
+Cursor loads rules from `.cursor/rules/` (project-level) or `~/.cursor/rules/` (global).
+
+```bash
+# Project-level
 mkdir -p .cursor/rules
 curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
   -o .cursor/rules/ios-code-review.md
+
+# Global (applies to all projects)
+mkdir -p ~/.cursor/rules
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  -o ~/.cursor/rules/ios-code-review.md
+```
+
+### GitHub Copilot (VS Code)
+
+Copilot reads a single `.github/copilot-instructions.md` file (project-level) or individual `.instructions.md` files from `.github/instructions/`.
+
+```bash
+# Append a rule to the project instructions file
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  >> .github/copilot-instructions.md
+
+# Or as a standalone instruction file (VS Code 1.96+)
+mkdir -p .github/instructions
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  -o .github/instructions/ios-code-review.instructions.md
+```
+
+### Claude Code
+
+Claude Code reads `CLAUDE.md` at the project root (project-level) or `~/.claude/CLAUDE.md` (global).
+
+```bash
+# Append a rule to the project CLAUDE.md
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  >> CLAUDE.md
+
+# Global (applies to all projects)
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  >> ~/.claude/CLAUDE.md
+```
+
+### Windsurf
+
+Windsurf reads `.windsurfrules` (project-level) or `~/.codeium/windsurf/memories/global_rules.md` (global).
+
+```bash
+# Append a rule to the project rules file
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  >> .windsurfrules
+
+# Global
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/rules/ios-code-review.md \
+  >> ~/.codeium/windsurf/memories/global_rules.md
 ```
 
 ## Rule Catalog

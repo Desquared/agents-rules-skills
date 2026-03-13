@@ -1,19 +1,59 @@
 # Agents Catalog
 
-Agents are manual-install artifacts (no universal cross-tool install standard yet).
+Agents are role-based Markdown files. **Claude Code has first-class support** for sub-agents today. Cursor, Windsurf, and GitHub Copilot handle agents differently — see the per-tool notes below.
 
-## How To Install An Agent
+## Quick Install
 
-1. Pick an agent file from the catalog below.
-2. Copy it into your tool's agents folder.
-
-Example (Claude global agents):
+The interactive installer handles all IDE paths for you:
 
 ```bash
+npx github:Desquared/agents-rules-skills install-agents
+```
+
+Pick your IDE(s), choose a scope (project or global), filter by platform, and the installer places files in the correct location — native agents folder for Claude Code, custom instructions for others.
+
+## Manual Install
+
+### How To Install An Agent
+
+### Claude Code
+
+Claude Code loads agents from `~/.claude/agents/` (global) or `.claude/agents/` (project-local). Each Markdown file becomes a sub-agent that Claude can automatically delegate to.
+
+```bash
+# Global (available in every project)
 mkdir -p ~/.claude/agents
 curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/agents/ios-security-reviewer.md \
   -o ~/.claude/agents/ios-security-reviewer.md
+
+# Project-local (only available in this project)
+mkdir -p .claude/agents
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/agents/ios-security-reviewer.md \
+  -o .claude/agents/ios-security-reviewer.md
 ```
+
+### GitHub Copilot
+
+GitHub Copilot supports project and global agent folders.
+
+```bash
+# Global (available in every project)
+mkdir -p ~/.copilot/agents
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/agents/ios-security-reviewer.md \
+  -o ~/.copilot/agents/ios-security-reviewer.md
+
+# Project-local (only available in this project)
+mkdir -p .github/agents
+curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/agents/ios-security-reviewer.md \
+  -o .github/agents/ios-security-reviewer.md
+```
+
+### Cursor, Windsurf
+
+These tools do not currently support a "drop a file = new sub-agent" pattern equivalent to Claude Code agents. Instead:
+
+- **Cursor**: Use the agent files as custom instructions or rules (see [RULES.md](RULES.md)). The content works just as well as detailed system-level guidance.
+- **Windsurf**: Paste the agent content into a Flow, or add it to a rule file (see [RULES.md](RULES.md)) for persistent context.
 
 ## Agent Catalog
 
