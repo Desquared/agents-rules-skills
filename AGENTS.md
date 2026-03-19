@@ -85,7 +85,7 @@ These tools do not currently support a "drop a file = new sub-agent" pattern equ
 ### Android
 
 - [android-accessibility-specialist.md](agents/android-accessibility-specialist.md): Android accessibility expert for TalkBack, Dynamic Text, color contrast, and assistive technologies.
-- [android-agent-guidelines.md](agents/android-agent-guidelines.md): Android Agent Guidelines.
+- [android-agent-guidelines.md](agents/android-agent-guidelines.md): Android Agent Discovery & Implementation Guidelines.
 - [android-build-error-resolver.md](agents/android-build-error-resolver.md): Android/Gradle build error specialist.
 - [android-compose-layout-specialist.md](agents/android-compose-layout-specialist.md): Expert Jetpack Compose layout specialist for complex layouts, custom modifiers, measurement/layout, and responsive design.
 - [android-concurrency-networking-agent.md](agents/android-concurrency-networking-agent.md): Expert in Kotlin coroutines and networking.

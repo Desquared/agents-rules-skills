@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T09:50:08.239Z",
+  "generatedAt": "2026-03-19T11:52:47.362Z",
   "rules": [
     {
       "name": "android-agent-orchestration",
@@ -156,6 +156,12 @@
       "file": "rules/ios-validation-testing.md",
       "platform": "ios",
       "description": "Validation & Testing."
+    },
+    {
+      "name": "shared-ai-safeguards",
+      "file": "rules/shared-ai-safeguards.md",
+      "platform": "shared",
+      "description": "Always-active safeguards to prevent hallucination, invention of facts/code, and forced changes."
     }
   ],
   "agents": [
@@ -169,7 +175,7 @@
       "name": "android-agent-guidelines",
       "file": "agents/android-agent-guidelines.md",
       "platform": "android",
-      "description": "Android Agent Guidelines."
+      "description": "Android Agent Discovery & Implementation Guidelines."
     },
     {
       "name": "android-build-error-resolver",
