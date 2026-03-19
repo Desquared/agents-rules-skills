@@ -47,7 +47,6 @@ description: Identifies potential performance bottlenecks in Jetpack Compose cod
 Use Layout Inspector → Recomposition Counts to visualize recompositions  
 Use Compose Compiler Metrics report (stability analysis)  
 Enable Composition Tracing in Layout Inspector  
-Check Recomposition Counts in Layout Inspector
 
 ## Severity
 
