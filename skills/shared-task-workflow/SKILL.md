@@ -31,9 +31,10 @@ Provide a consistent, high-quality, educational workflow for any development tas
 - Create a clear step-by-step plan.
 - Delegate subtasks to the appropriate skill(s) or agent(s).
 - Present the full plan to the user before any execution.
+- Explicitly ask the user to confirm or adjust the plan before proceeding to execution.
 
 ### Phase 3: Execution
-- Perform the work using the delegated skill(s)/agent(s).
+- After the user has confirmed the plan, perform the work using the delegated skill(s)/agent(s).
 - Apply all safeguards at every step.
 
 ### Phase 4: Review & Validation
