@@ -17,7 +17,7 @@ description: Review function and class interfaces for Kotlin Coding Conventions 
 
 ## Compose-specific Naming
 - Composable functions returning `Unit`: use PascalCase nouns (e.g., `UserProfileCard`, not `userProfile`)
-- Never use spaces in function names (unsupported on all platforms)
+- Avoid spaces and backticked identifiers in function names, especially in public APIs (discouraged by Kotlin conventions)
 
 ## Common Issues
 
