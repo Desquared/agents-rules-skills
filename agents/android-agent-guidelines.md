@@ -20,7 +20,7 @@ grep -rE "koin|hilt|dagger|room|realm|sqldelight|ktor|retrofit|coil|glide|compos
 
 # Fallback: scan build files directly
 
-grep -rE "koin|hilt|dagger|room|realm|sqldelight|ktor|retrofit|coil|glide|compose|rxjava|coroutines" /build.gradle*
+grep -rE "koin|hilt|dagger|room|realm|sqldelight|ktor|retrofit|coil|glide|compose|rxjava|coroutines" ./build.gradle*
 
 ```
 
