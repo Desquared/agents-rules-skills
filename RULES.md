@@ -77,6 +77,9 @@ curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/
 
 ## Rule Catalog
 
+### Cross-Platform
+- [shared-ai-safeguards.md](rules/shared-ai-safeguards.md): AI Safeguard.
+
 ### Flutter
 
 - [flutter-accessibility.md](rules/flutter-accessibility.md): Accessibility (A11Y).
