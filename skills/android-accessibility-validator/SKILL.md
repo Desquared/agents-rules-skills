@@ -12,11 +12,18 @@ description: Checks and suggests accessibility improvements for Jetpack Compose 
 - [ ] Decorative elements: `Modifier.semantics { invisibleToUser() }`
 - [ ] Related elements: `Modifier.semantics(mergeDescendants = true)`
 - [ ] contentDescription is localized
+- [ ] Use `Role` (e.g., `Role.Button`, `Role.Switch`, `Role.Checkbox`) via `semantics { role = Role.Button }`
+- [ ] Provide `stateDescription` for toggles/switches (e.g., "On", "Checked")
+- [ ] Mark headings with `semantics { heading() }`
+- [ ] Use `onClickLabel` for custom action descriptions
+- [ ] Control traversal order with `isTraversalGroup` and `traversalIndex` when default order is insufficient
+- [ ] Override defaults with `clearAndSetSemantics { ... }` for complex custom components
 
 ### Dynamic Text
 - [ ] Use `sp` for text sizes, not `dp`
 - [ ] Use `MaterialTheme.typography` scales
 - [ ] Layout adapts to large text sizes
+- [ ] Support pinch-to-zoom scalable content with `Modifier.transformable` + state updates where appropriate
 
 ### Color Contrast
 - [ ] Text: 4.5:1 (normal), 3:1 (large 18sp+)
@@ -27,15 +34,21 @@ description: Checks and suggests accessibility improvements for Jetpack Compose 
 - [ ] Minimum 48dp
 - [ ] Use `Modifier.minimumInteractiveComponentSize()`
 
+### Testing
+- [ ] Manual testing with TalkBack enabled
+- [ ] Automated checks via `enableAccessibilityChecks()` in Compose tests
+
 ## Quick Fixes
 
-| Issue | Fix |
-|-------|-----|
-| No contentDescription | `Modifier.semantics { contentDescription = "desc" }` |
-| Decorative | `Modifier.semantics { invisibleToUser() }` |
-| Group | `Modifier.semantics(mergeDescendants = true)` |
-| Small target | `Modifier.size(48.dp)` |
-| Fixed font | Use MaterialTheme.typography.bodyLarge |
+| Issue                          | Fix |
+|--------------------------------|-----|
+| No contentDescription          | `Modifier.semantics { contentDescription = "desc" }` |
+| Decorative                     | `Modifier.semantics { invisibleToUser() }` |
+| Group                          | `Modifier.semantics(mergeDescendants = true)` |
+| Small target                   | `Modifier.size(48.dp)` |
+| Fixed font                     | Use MaterialTheme.typography.bodyLarge |
+| Missing role or state          | `Modifier.semantics { role = Role.Switch; stateDescription = "On" }` |
+| Wrong traversal order          | `Modifier.semantics { isTraversalGroup = true; traversalIndex = 1 }` |
 
 ## Severity
 
