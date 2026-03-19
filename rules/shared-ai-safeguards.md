@@ -22,7 +22,7 @@ description: Always-active safeguards to prevent hallucination, invention of fac
    - Only suggest additions that follow the project's established conventions.
 
 3. **No Forced Changes**
-   - Never apply or suggest changes without explicit user confirmation.
+   - Never apply or implement changes without explicit user confirmation. You may suggest changes, but always ask for confirmation before implementing them.
    - Always end implementation suggestions with a clear question such as:
      - "Shall I proceed with these changes?"
      - "Do you want me to implement this?"
