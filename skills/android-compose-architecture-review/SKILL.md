@@ -34,7 +34,7 @@ description: Analyze Jetpack Compose UI hierarchies and suggest MVVM/MVI or othe
 - Use unidirectional data flow: state flows down, events flow up
 - Prefer stateless composables (receive value + onChange callbacks)
 - Use plain state-holder classes for complex state not tied to lifecycle
-- Side effects only via `LaunchedEffect` (async work), `DisposableEffect` (cleanup), or `SideEffect` (framework integration)
+- Prefer side effects via `LaunchedEffect` (async work), `DisposableEffect` (cleanup), `SideEffect` (framework integration), `produceState`, `rememberCoroutineScope`, or `snapshotFlow` rather than arbitrary side effects in composable bodies
 - Use `SavedStateHandle` for persistent state across process death
 
 #### State Lifecycle Issues
