@@ -80,6 +80,7 @@ done
 | Skill | Description | Install | Source |
 |---|---|---|---|
 | shared-bug-investigation | Scientific method expert for systematic bug investigation and root cause analysis. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-bug-investigation` | [SKILL.md](skills/shared-bug-investigation/SKILL.md) |
+| shared-task-workflow | Generic, project-abstract task workflow orchestrator. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-task-workflow` | [SKILL.md](skills/shared-task-workflow/SKILL.md) |
 
 ### Flutter
 

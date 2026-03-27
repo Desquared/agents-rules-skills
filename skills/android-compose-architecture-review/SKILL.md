@@ -1,6 +1,6 @@
 ---
 name: android-compose-architecture-review
-description: Analyze Jetpack Compose UI hierarchies and suggest MVVM/MVI or other architectural improvements. Use when **reviewing existing Compose code**, creating new Compose components, analyzing composable structure, or when the user asks about Compose architecture patterns. Best for code review and refactoring guidance.
+description: Analyze Jetpack Compose UI hierarchies and suggest MVVM/MVI or other architectural improvements. Use when reviewing existing Compose code, creating new Compose components, analyzing composable structure, or when the user asks about Compose architecture patterns. Best for code review and refactoring guidance.
 ---
 
 # Compose Architecture Review
@@ -31,6 +31,11 @@ description: Analyze Jetpack Compose UI hierarchies and suggest MVVM/MVI or othe
 - `collectAsStateWithLifecycle()` - lifecycle-aware collection
 - `derivedStateOf` - computed state from other state
 - CompositionLocal - shared read-only state
+- Use unidirectional data flow: state flows down, events flow up
+- Prefer stateless composables (receive value + onChange callbacks)
+- Use plain state-holder classes for complex state not tied to lifecycle
+- Prefer side effects via `LaunchedEffect` (async work), `DisposableEffect` (cleanup), `SideEffect` (framework integration), `produceState`, `rememberCoroutineScope`, or `snapshotFlow` rather than arbitrary side effects in composable bodies
+- Use `SavedStateHandle` for persistent state across process death
 
 #### State Lifecycle Issues
 - [ ] No leaked ViewModels (use viewModel() or hiltViewModel())
@@ -51,17 +56,19 @@ description: Analyze Jetpack Compose UI hierarchies and suggest MVVM/MVI or othe
 
 ## Common Issues
 
-| Issue | Fix |
-|-------|-----|
-| Business logic in composable | Extract to ViewModel |
-| Network call in composable | Move to ViewModel with LaunchedEffect |
-| Singleton in composable | Inject via DI or CompositionLocal |
-| 200+ line composable | Break into smaller components |
-| State not hoisted | Hoist to parent or ViewModel |
+| Issue                                      | Fix |
+|--------------------------------------------|-----|
+| Business logic in composable               | Extract to ViewModel |
+| Network call in composable                 | Move to ViewModel with LaunchedEffect |
+| Singleton in composable                    | Inject via DI or CompositionLocal |
+| 200+ line composable                       | Break into smaller components |
+| State not hoisted                          | Hoist to parent or ViewModel |
+| Side effects or network calls directly in composable | Wrap in `LaunchedEffect(key) { ... }` or move to ViewModel |
+| Stateful composable when stateless would suffice | Hoist state and pass value + lambda |
 
 ## State Hoisting Pattern
 
-Composable receives: `value: T, onValueChange: (T) -> Unit`
+Composable receives: `value: T, onValueChange: (T) -> Unit`  
 ViewModel holds: `MutableStateFlow<T>`
 
 ## Severity
