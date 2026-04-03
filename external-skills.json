@@ -1,10 +1,109 @@
 [
-  {
-    "name": "swiftui-agent",
-    "description": "Use when building SwiftUI views, composing layouts, managing state, or applying modern SwiftUI patterns across iOS, macOS, watchOS, and tvOS apps.",
-    "platform": "ios",
-    "repo": "https://github.com/twostraws/SwiftUI-Agent-Skill",
-    "skillPath": "SKILL.md",
-    "author": "twostraws"
-  }
+    {
+        "name": "swiftui-agent",
+        "description": "Use when building SwiftUI views, composing layouts, managing state, or applying modern SwiftUI patterns across iOS, macOS, watchOS, and tvOS apps.",
+        "platform": "ios",
+        "repo": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+        "skillPath": "SKILL.md",
+        "author": "twostraws"
+    },
+    {
+        "name": "ios-swiftui-expert",
+        "description": "Expert guidance for SwiftUI state management, view composition, performance optimizations, and avoiding redundant updates.",
+        "platform": "ios",
+        "repo": "https://github.com/AvdLee/SwiftUI-Agent-Skill",
+        "skillPath": "skills/swiftui-expert-skill/SKILL.md",
+        "originalName": "swiftui-expert-skill",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-swift-concurrency-expert",
+        "description": "Expert guidance on Swift 6 strict concurrency, resolving data races, Actor usage, and Sendable conformance.",
+        "platform": "ios",
+        "repo": "https://github.com/AvdLee/Swift-Concurrency-Agent-Skill",
+        "skillPath": "skills/swift-concurrency-expert/SKILL.md",
+        "originalName": "swift-concurrency-expert",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-core-data-expert",
+        "description": "Specialized agent instructions for CoreData and SwiftData optimization, context management, and fetch performance.",
+        "platform": "ios",
+        "repo": "https://github.com/AvdLee/Core-Data-Agent-Skill",
+        "skillPath": "skills/core-data-expert/SKILL.md",
+        "originalName": "core-data-expert",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-swift-testing-expert",
+        "description": "AI assistance for writing robust unit tests using the modern Swift Testing framework.",
+        "platform": "ios",
+        "repo": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
+        "skillPath": "skills/swift-testing-expert/SKILL.md",
+        "originalName": "swift-testing-expert",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-xcode-build-orchestrator",
+        "description": "Orchestrates the analysis and optimization of Xcode build times.",
+        "repo": "https://github.com/avdlee/xcode-build-optimization-agent-skill",
+        "platform": "ios",
+        "skillPath": "skills/xcode-build-orchestrator/SKILL.md",
+        "originalName": "xcode-build-orchestrator",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-xcode-project-analyzer",
+        "description": "Analyzes Xcode project settings (.pbxproj) for suboptimal build configurations.",
+        "repo": "https://github.com/avdlee/xcode-build-optimization-agent-skill",
+        "platform": "ios",
+        "skillPath": "skills/xcode-project-analyzer/SKILL.md",
+        "originalName": "xcode-project-analyzer",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-xcode-compilation-analyzer",
+        "description": "Analyzes Swift compilation logs to identify slow-compiling files and functions.",
+        "repo": "https://github.com/avdlee/xcode-build-optimization-agent-skill",
+        "platform": "ios",
+        "skillPath": "skills/xcode-compilation-analyzer/SKILL.md",
+        "originalName": "xcode-compilation-analyzer",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-xcode-build-fixer",
+        "description": "Automatically fixes identified build bottlenecks in Xcode projects.",
+        "repo": "https://github.com/avdlee/xcode-build-optimization-agent-skill",
+        "platform": "ios",
+        "skillPath": "skills/xcode-build-fixer/SKILL.md",
+        "originalName": "xcode-build-fixer",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-xcode-build-benchmark",
+        "description": "Benchmarks Xcode build times before and after optimizations.",
+        "platform": "ios",
+        "repo": "https://github.com/avdlee/xcode-build-optimization-agent-skill",
+        "skillPath": "skills/xcode-build-benchmark/SKILL.md",
+        "originalName": "xcode-build-benchmark",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-spm-build-analysis",
+        "description": "Analyzes Swift Package Manager (SPM) dependencies for build time impacts.",
+        "platform": "ios",
+        "repo": "https://github.com/avdlee/xcode-build-optimization-agent-skill",
+        "skillPath": "skills/spm-build-analysis/SKILL.md",
+        "originalName": "spm-build-analysis",
+        "author": "AvdLee"
+    },
+    {
+        "name": "ios-update-swiftui-apis",
+        "description": "Refactors deprecated SwiftUI code to modern, supported APIs.",
+        "platform": "ios",
+        "repo": "https://github.com/avdlee/swiftui-agent-skill",
+        "skillPath": "skills/update-swiftui-apis/SKILL.md",
+        "originalName": "update-swiftui-apis",
+        "author": "AvdLee"
+    }
 ]
