@@ -156,3 +156,5 @@ npm run docs:export
 - https://cursor.com/blog/agent-best-practices
 - https://www.builder.io/blog/agent-skills-rules-commands
 - https://developers.openai.com/codex/skills/
+- https://github.com/AvdLee/SwiftUI-Agent-Skill
+- https://github.com/avdlee/xcode-build-optimization-agent-skill

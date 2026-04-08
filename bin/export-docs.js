@@ -109,6 +109,7 @@ function loadExternalSkills() {
       repo: s.repo,
       skillPath: s.skillPath || 'SKILL.md',
       author: s.author || null,
+      originalName: s.originalName || null,
     }));
   } catch {
     return [];
@@ -199,9 +200,17 @@ function renderSkillsMd(skills) {
     const rows = items
       .map((s) => {
         if (s.external) {
-          const sourceUrl = `${s.repo}/blob/main/${s.skillPath}`;
+          const installCmd = s.originalName 
+            ? `npx skills add ${s.repo} --skill ${s.originalName}`
+            : `npx skills add ${s.repo}`;
+
+          const sourceUrl = s.originalName 
+            ? `${s.repo}/${s.skillPath}`
+            : `${s.repo}/SKILL.md`;
+
           const nameCell = s.author ? `${s.name} *(by ${s.author})*` : s.name;
-          return `| ${nameCell} | ${s.description} | \`npx skills add ${s.repo}\` | [SKILL.md](${sourceUrl}) |`;
+          
+          return `| ${nameCell} | ${s.description} | \`${installCmd}\` | [SKILL.md](${sourceUrl}) |`;
         }
         return `| ${s.name} | ${s.description} | \`npx skills add ${REPO_URL} --skill ${s.name}\` | [SKILL.md](${s.sourcePath}) |`;
       })
