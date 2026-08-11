@@ -73,6 +73,45 @@ for skill in android-accessibility-validator android-compose-architecture-review
 done
 ```
 
+## Manual Install
+
+A skill is a folder containing `SKILL.md` plus any reference files it links to. Copy the whole folder — copying only `SKILL.md` breaks skills that reference companion files.
+
+```bash
+# Grab the repository once
+git clone --depth 1 https://github.com/Desquared/agents-rules-skills /tmp/agents-rules-skills
+```
+
+Then copy the skill folder to your tool's skills directory:
+
+| Tool | Global (all projects) | Project-local |
+|---|---|---|
+| **Cursor** | `~/.cursor/skills/<skill-name>/` | `.cursor/skills/<skill-name>/` |
+| **Claude Code** | `~/.claude/skills/<skill-name>/` | `.claude/skills/<skill-name>/` |
+| **Codex** | `~/.codex/skills/<skill-name>/` | `.agents/skills/<skill-name>/` |
+
+```bash
+SKILL=shared-bug-investigation
+
+# Cursor (global)
+mkdir -p ~/.cursor/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" ~/.cursor/skills/
+
+# Claude Code (global)
+mkdir -p ~/.claude/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" ~/.claude/skills/
+
+# Codex (global)
+mkdir -p ~/.codex/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" ~/.codex/skills/
+
+# Codex (checked into a repository, shared with the team)
+mkdir -p .agents/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" .agents/skills/
+```
+
+Restart the tool (or start a new chat) so it picks the skill up.
+
 ## Full Catalog
 
 ### Cross-platform
@@ -80,6 +119,7 @@ done
 | Skill | Description | Install | Source |
 |---|---|---|---|
 | shared-bug-investigation | Scientific method expert for systematic bug investigation and root cause analysis. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-bug-investigation` | [SKILL.md](skills/shared-bug-investigation/SKILL.md) |
+| shared-figma-accessibility-annotations | Annotate Figma UI screens with accessibility annotations — reading order, tab/focus order, Button, Image alt, Role/Value/Label and More info callouts — using the annotation library configured for the project. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-figma-accessibility-annotations` | [SKILL.md](skills/shared-figma-accessibility-annotations/SKILL.md) |
 | shared-task-workflow | Generic, project-abstract task workflow orchestrator. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-task-workflow` | [SKILL.md](skills/shared-task-workflow/SKILL.md) |
 
 ### Flutter

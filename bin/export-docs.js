@@ -299,6 +299,45 @@ for skill in ${androidLoop}; do
 done
 \`\`\`
 
+## Manual Install
+
+A skill is a folder containing \`SKILL.md\` plus any reference files it links to. Copy the whole folder — copying only \`SKILL.md\` breaks skills that reference companion files.
+
+\`\`\`bash
+# Grab the repository once
+git clone --depth 1 ${REPO_URL} /tmp/agents-rules-skills
+\`\`\`
+
+Then copy the skill folder to your tool's skills directory:
+
+| Tool | Global (all projects) | Project-local |
+|---|---|---|
+| **Cursor** | \`~/.cursor/skills/<skill-name>/\` | \`.cursor/skills/<skill-name>/\` |
+| **Claude Code** | \`~/.claude/skills/<skill-name>/\` | \`.claude/skills/<skill-name>/\` |
+| **Codex** | \`~/.codex/skills/<skill-name>/\` | \`.agents/skills/<skill-name>/\` |
+
+\`\`\`bash
+SKILL=shared-bug-investigation
+
+# Cursor (global)
+mkdir -p ~/.cursor/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" ~/.cursor/skills/
+
+# Claude Code (global)
+mkdir -p ~/.claude/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" ~/.claude/skills/
+
+# Codex (global)
+mkdir -p ~/.codex/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" ~/.codex/skills/
+
+# Codex (checked into a repository, shared with the team)
+mkdir -p .agents/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" .agents/skills/
+\`\`\`
+
+Restart the tool (or start a new chat) so it picks the skill up.
+
 ## Full Catalog
 
 ${sections}`;
@@ -530,7 +569,10 @@ Each tool gets files in the right location automatically (e.g., \`.cursor/rules/
 
 Skills follow the Agent Skills standard and can be installed directly with \`npx skills add\`.
 
+They work in Cursor (\`~/.cursor/skills/\`), Claude Code (\`~/.claude/skills/\`), and Codex (\`~/.codex/skills/\`, or \`.agents/skills/\` when checked into a repository).
+
 - Full catalog + install-all commands: [SKILLS.md](SKILLS.md)
+- Copy a skill folder by hand: [SKILLS.md#manual-install](SKILLS.md#manual-install)
 
 ### Manual examples (if you prefer curl)
 

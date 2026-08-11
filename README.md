@@ -55,7 +55,10 @@ Each tool gets files in the right location automatically (e.g., `.cursor/rules/`
 
 Skills follow the Agent Skills standard and can be installed directly with `npx skills add`.
 
+They work in Cursor (`~/.cursor/skills/`), Claude Code (`~/.claude/skills/`), and Codex (`~/.codex/skills/`, or `.agents/skills/` when checked into a repository).
+
 - Full catalog + install-all commands: [SKILLS.md](SKILLS.md)
+- Copy a skill folder by hand: [SKILLS.md#manual-install](SKILLS.md#manual-install)
 
 ### Manual examples (if you prefer curl)
 
