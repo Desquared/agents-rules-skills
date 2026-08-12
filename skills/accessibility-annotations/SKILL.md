@@ -1,9 +1,9 @@
 ---
-name: shared-figma-accessibility-annotations
+name: accessibility-annotations
 description: Annotate Figma UI screens with accessibility annotations — reading order, tab/focus order, Button, Image alt, Role/Value/Label and More info callouts — using the annotation library configured for the project. Use when asked for accessibility annotations, AX annotations, a11y markup in Figma, reading or focus order, screen reader labels for designs, or to continue an accessibility annotation handoff.
 ---
 
-# Figma Accessibility Annotations
+# Accessibility Annotations
 
 Annotate Figma screens with accessibility (AX) annotations so engineers know the reading order, focus order, roles, labels, and alt text for every element.
 
@@ -77,14 +77,26 @@ Task progress:
 - **Reading order (gray)** = text only. **Tab order (red)** = reading + focus.
 - **One continuous number stream** across reading and tab markers.
 - Default: markers in a **side gutter**. On-element only when side placement is ambiguous (for example chip grids).
-- Single-element requests usually need **no** lone order `1`, unless the user asks for order or the block has multiple controls.
+- **A single element gets no order markers at all** — there is nothing to sequence. Add orders only when the target holds several elements to sequence, or when the user asks for order explicitly.
+
+### Single element (component docs)
+
+Annotating one component or card is not annotating a screen. Keep it to the semantics of that element:
+
+| Include | Skip |
+|---------|------|
+| `Image` `Alt=""` on every decorative icon or logo inside it | Reading and tab/focus order markers |
+| One `Role, Value, Label` box: Role, Label, short Info, AX Hint | Highlight rectangles around the element, even library ones |
+| — | Note/comment cards that restate what the Role box already says |
+
+Keep Info to one short sentence (for example `Entire card is one tappable element.`). State wording such as out of stock or disabled belongs in the Label, not in Info.
 
 ### Placement
 
 - Keep callouts **next to** their targets; Callout Direction must point at the real control.
 - Roles in side gutters; if the left is tight, use the right. Stagger Y.
 - Keep Button/Image/Role callouts **off** screen content when they would hide UI.
-- No homemade highlight rectangles. Use library rectangles only if the user asks.
+- No homemade highlight rectangles, and no library rectangles either unless the user asks. Never use one to group a single element.
 - No documentation-only More info notes. Exception: **Pattern H Shimmer**.
 
 ### Loading / shimmer (Pattern H)
@@ -132,10 +144,11 @@ Handoff format for multi-session work: [handoff-template.md](handoff-template.md
 
 1. The whole card is one Role — not a separate CTA Button.
 2. Direction **Left**; Value **off**.
-3. Label is the full spoken string (title + CTA + summary).
-4. Info covers the instant announcement and that the entire card is tappable.
+3. Label is the full spoken string (title, price/summary, every tag, in visual order).
+4. Info is one short sentence, for example `Entire card is one tappable element.`
 5. Hint is `Double tap to activate`.
-6. Logos inside the card → Image `Alt=""`; skip `+N` overflow chips.
+6. Logos and tag icons inside the card → Image `Alt=""`; skip `+N` overflow chips.
+7. When the card is the whole request: no order markers, no rectangle, no note card.
 
 ## Figma plugin constraints
 

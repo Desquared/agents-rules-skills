@@ -19,7 +19,7 @@ Keep it free of secrets and credentials. Figma file keys are fine only if the fi
 
 ## Project goal
 Annotate the `| AX` screens with the annotation library components.
-Follow skill: `shared-figma-accessibility-annotations`.
+Follow skill: `accessibility-annotations`.
 
 ## How to work
 1. Ask which section is next, or continue the named one.

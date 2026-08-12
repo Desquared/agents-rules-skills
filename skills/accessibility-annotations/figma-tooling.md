@@ -4,6 +4,8 @@
 
 Prefer cloning **already-correct instances on the canvas** over creating a fresh instance from the library master, because canvas instances usually carry the project's label styling already.
 
+Instances on another page of the same file are clonable too, and are usually the best source when that page holds a signed-off example: load the source page (`await sourcePage.loadAsync()`) without switching to it, then clone. Importing a variant by component key often fails, so reach for cloning first.
+
 Record the local node IDs for each of these in the project handoff — they are file-specific.
 
 ### Image
@@ -94,6 +96,9 @@ For More info and Role reparenting failures, swap the font **before** `appendChi
 
 ## Placement heuristics
 
+- **Auto-layout parents ignore `x`/`y`.** Component-documentation frames are often auto-layout. Set `layoutPositioning = 'ABSOLUTE'` on each annotation after `appendChild`, then set `x`/`y`, otherwise the callouts get stacked into the layout flow.
+- **Aim the leader line, not the box.** Role/Value/Label instances include the leader line and its end dot, so instance width is much larger than the visible panel. Measure the dot's offset inside the instance (`dot.absoluteTransform` minus the instance's), then solve for the instance `x`/`y` that puts the dot where you want it.
+- **Toggling a boolean property resizes the instance.** Turning Info or AX Hint on/off changes width and height, which moves the leader dot. Re-measure and re-align after any property change.
 - Section-relative coordinates: `abs(node) - abs(section)`.
 - Leave gutters so annotations never sit on neighbouring screens.
 - Offset sibling clusters by the screen `Δx`; correct Y when header heights differ.

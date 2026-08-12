@@ -55,10 +55,12 @@ Node IDs are intentionally absent from this file — they are file-specific and 
 ## Pattern G — Whole teaser / promo card
 
 1. Annotate the **whole card** as one Button Role.
-2. No separate CTA Button; no lone order marker for single-element work.
+2. No separate CTA Button; **no order markers and no rectangle** for single-element work.
 3. Direction **Left**; Value **off**.
-4. Rich Label + Info (instant announcement, and that the entire card is tappable).
-5. Logos inside the card → Image `Alt=""`; skip `+N` overflow chips.
+4. Rich Label + one-sentence Info (`Entire card is one tappable element.`).
+5. Logos and tag icons inside the card → Image `Alt=""`; skip `+N` overflow chips.
+
+A signed-off card annotation is small: one `Alt=""` per decorative icon plus one Role/Value/Label box, nothing else. The Label lists every visible tag in visual order and spells out icon meanings (a hearts icon reads as `hearts`). State wording such as `Back Soon` belongs in the Label. When the card sits in a carousel, that is a separate screen-level pass which adds position announcements (`Card 1 of 5`).
 
 ## Pattern H — Loading / shimmer
 
