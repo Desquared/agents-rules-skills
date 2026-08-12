@@ -25,6 +25,7 @@ Then pick your path:
 | Browse the full skills catalog | [SKILLS.md](SKILLS.md) |
 | Browse rules & manual install | [RULES.md](RULES.md) |
 | Browse agents & manual install | [AGENTS.md](AGENTS.md) |
+| Install the accessibility plugin | [docs/plugin.md](docs/plugin.md) |
 
 ## Installation Model
 
@@ -59,6 +60,22 @@ They work in Cursor (`~/.cursor/skills/`), Claude Code (`~/.claude/skills/`), an
 
 - Full catalog + install-all commands: [SKILLS.md](SKILLS.md)
 - Copy a skill folder by hand: [SKILLS.md#manual-install](SKILLS.md#manual-install)
+
+### Plugin — one install for the whole accessibility workflow
+
+This repository doubles as a plugin marketplace. The `accessibility-toolkit` plugin bundles the accessibility skills, agents, and rules together, so teammates get the Figma annotation workflow plus the iOS, Android, and Flutter validators in a single install.
+
+```bash
+# Claude Code
+claude plugin marketplace add Desquared/agents-rules-skills
+claude plugin install accessibility-toolkit@desquared-agent-plugins
+
+# Codex
+codex plugin marketplace add Desquared/agents-rules-skills
+codex plugin add accessibility-toolkit@desquared-agent-plugins
+```
+
+Cursor has no install-from-URL command: import this repository once as a team marketplace, or symlink the plugin locally. Full instructions, including how the plugin is built and released, are in [docs/plugin.md](docs/plugin.md).
 
 ### Manual examples (if you prefer curl)
 

@@ -1,0 +1,14 @@
+{
+  "name": "desquared-agent-plugins",
+  "displayName": "Desquared Agent Plugins",
+  "owner": {
+    "name": "Desquared"
+  },
+  "plugins": [
+    {
+      "name": "accessibility-toolkit",
+      "source": "./plugins/accessibility-toolkit",
+      "description": "Accessibility skills, agents, and rules for annotating designs in Figma and implementing accessible iOS, Android, and Flutter UI."
+    }
+  ]
+}

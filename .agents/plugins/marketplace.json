@@ -1,0 +1,20 @@
+{
+  "name": "desquared-agent-plugins",
+  "plugins": [
+    {
+      "name": "accessibility-toolkit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/accessibility-toolkit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "interface": {
+        "displayName": "Accessibility Toolkit"
+      }
+    }
+  ]
+}

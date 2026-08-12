@@ -7,7 +7,7 @@ Naming convention:
 - `android-*` for Android skills
 - `ios-*` for iOS skills
 - `flutter-*` for Flutter skills
-- `shared-*` for cross-platform skills
+- `shared-*`, or no prefix at all, for cross-platform skills
 
 Quick navigation:
 
@@ -118,8 +118,8 @@ Restart the tool (or start a new chat) so it picks the skill up.
 
 | Skill | Description | Install | Source |
 |---|---|---|---|
+| accessibility-annotations | Annotate Figma UI screens with accessibility annotations — reading order, tab/focus order, Button, Image alt, Role/Value/Label and More info callouts — using the annotation library configured for the project. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill accessibility-annotations` | [SKILL.md](skills/accessibility-annotations/SKILL.md) |
 | shared-bug-investigation | Scientific method expert for systematic bug investigation and root cause analysis. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-bug-investigation` | [SKILL.md](skills/shared-bug-investigation/SKILL.md) |
-| shared-figma-accessibility-annotations | Annotate Figma UI screens with accessibility annotations — reading order, tab/focus order, Button, Image alt, Role/Value/Label and More info callouts — using the annotation library configured for the project. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-figma-accessibility-annotations` | [SKILL.md](skills/shared-figma-accessibility-annotations/SKILL.md) |
 | shared-task-workflow | Generic, project-abstract task workflow orchestrator. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-task-workflow` | [SKILL.md](skills/shared-task-workflow/SKILL.md) |
 
 ### Flutter
@@ -138,7 +138,7 @@ Restart the tool (or start a new chat) so it picks the skill up.
 
 | Skill | Description | Install | Source |
 |---|---|---|---|
-| ios-accessibility-validator | Checks and suggests accessibility improvements for SwiftUI and UIKit code including VoiceOver labels, dynamic type support, and color contrast. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-accessibility-validator` | [SKILL.md](skills/ios-accessibility-validator/SKILL.md) |
+| ios-accessibility-validator | Checks and suggests accessibility improvements for SwiftUI and UIKit code including VoiceOver, Dynamic Type, color contrast, motion, and input methods. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-accessibility-validator` | [SKILL.md](skills/ios-accessibility-validator/SKILL.md) |
 | ios-performance-profiler | Identifies potential performance bottlenecks in SwiftUI code including expensive view updates, unnecessary redraws, and memory issues. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-performance-profiler` | [SKILL.md](skills/ios-performance-profiler/SKILL.md) |
 | ios-swift-api-design-reviewer | Review function and class interfaces for Swift API Design Guidelines compliance. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-swift-api-design-reviewer` | [SKILL.md](skills/ios-swift-api-design-reviewer/SKILL.md) |
 | ios-swiftui-architecture-review | Analyze SwiftUI view hierarchies and suggest MVVM or other architectural improvements. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-swiftui-architecture-review` | [SKILL.md](skills/ios-swiftui-architecture-review/SKILL.md) |
