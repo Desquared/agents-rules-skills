@@ -1,14 +1,10 @@
-# ios-accessibility-validator
-
 ---
-
 name: ios-accessibility-validator
-
 description: Checks and suggests accessibility improvements for SwiftUI and UIKit code including VoiceOver, Dynamic Type, color contrast, motion, and input methods. Use when creating or modifying UI components, views, or when the user asks about accessibility.
-
 ---
 
 # Accessibility Validator
+
 ## Core Checklist (applies to most projects)
 
 ### VoiceOver & Screen Reader

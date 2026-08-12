@@ -1,5 +1,5 @@
 ---
-name: accessibility-specialist
+name: ios-accessibility-specialist
 description: iOS accessibility expert for VoiceOver, Dynamic Type, color contrast, and assistive technologies. Use when building UI, reviewing accessibility, or ensuring WCAG compliance.
 ---
 

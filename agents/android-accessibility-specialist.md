@@ -1,5 +1,5 @@
 ---
-name: accessibility-specialist-android
+name: android-accessibility-specialist
 description: Android accessibility expert for TalkBack, Dynamic Text, color contrast, and assistive technologies. Use when building UI, reviewing accessibility, or ensuring WCAG compliance.
 ---
 
