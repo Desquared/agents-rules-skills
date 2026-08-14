@@ -1,5 +1,3 @@
-# ios-performance-profiler
-
 ---
 
 name: ios-performance-profiler
