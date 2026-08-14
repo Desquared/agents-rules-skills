@@ -79,7 +79,8 @@ function platformFromName(name) {
   if (prefix === 'ios') return 'ios';
   if (prefix === 'flutter') return 'flutter';
   if (prefix === 'shared') return 'shared';
-  return 'other';
+  // Names without a platform prefix are cross-platform by definition.
+  return 'shared';
 }
 
 function groupedByPlatform(items) {
@@ -236,7 +237,7 @@ Naming convention:
 - \`android-*\` for Android skills
 - \`ios-*\` for iOS skills
 - \`flutter-*\` for Flutter skills
-- \`shared-*\` for cross-platform skills
+- \`shared-*\`, or no prefix at all, for cross-platform skills
 
 Quick navigation:
 
@@ -298,6 +299,45 @@ for skill in ${androidLoop}; do
   npx skills add ${REPO_URL} --skill "\$skill"
 done
 \`\`\`
+
+## Manual Install
+
+A skill is a folder containing \`SKILL.md\` plus any reference files it links to. Copy the whole folder — copying only \`SKILL.md\` breaks skills that reference companion files.
+
+\`\`\`bash
+# Grab the repository once
+git clone --depth 1 ${REPO_URL} /tmp/agents-rules-skills
+\`\`\`
+
+Then copy the skill folder to your tool's skills directory:
+
+| Tool | Global (all projects) | Project-local |
+|---|---|---|
+| **Cursor** | \`~/.cursor/skills/<skill-name>/\` | \`.cursor/skills/<skill-name>/\` |
+| **Claude Code** | \`~/.claude/skills/<skill-name>/\` | \`.claude/skills/<skill-name>/\` |
+| **Codex** | \`~/.codex/skills/<skill-name>/\` | \`.agents/skills/<skill-name>/\` |
+
+\`\`\`bash
+SKILL=shared-bug-investigation
+
+# Cursor (global)
+mkdir -p ~/.cursor/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" ~/.cursor/skills/
+
+# Claude Code (global)
+mkdir -p ~/.claude/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" ~/.claude/skills/
+
+# Codex (global)
+mkdir -p ~/.codex/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" ~/.codex/skills/
+
+# Codex (checked into a repository, shared with the team)
+mkdir -p .agents/skills
+cp -R /tmp/agents-rules-skills/skills/"\$SKILL" .agents/skills/
+\`\`\`
+
+Restart the tool (or start a new chat) so it picks the skill up.
 
 ## Full Catalog
 
@@ -500,6 +540,7 @@ Then pick your path:
 | Browse the full skills catalog | [SKILLS.md](SKILLS.md) |
 | Browse rules & manual install | [RULES.md](RULES.md) |
 | Browse agents & manual install | [AGENTS.md](AGENTS.md) |
+| Install the accessibility plugin | [docs/plugin.md](docs/plugin.md) |
 
 ## Installation Model
 
@@ -530,7 +571,26 @@ Each tool gets files in the right location automatically (e.g., \`.cursor/rules/
 
 Skills follow the Agent Skills standard and can be installed directly with \`npx skills add\`.
 
+They work in Cursor (\`~/.cursor/skills/\`), Claude Code (\`~/.claude/skills/\`), and Codex (\`~/.codex/skills/\`, or \`.agents/skills/\` when checked into a repository).
+
 - Full catalog + install-all commands: [SKILLS.md](SKILLS.md)
+- Copy a skill folder by hand: [SKILLS.md#manual-install](SKILLS.md#manual-install)
+
+### Plugin — one install for the whole accessibility workflow
+
+This repository doubles as a plugin marketplace. The \`accessibility-toolkit\` plugin bundles the accessibility skills, agents, and rules together, so teammates get the Figma annotation workflow plus the iOS, Android, and Flutter validators in a single install.
+
+\`\`\`bash
+# Claude Code
+claude plugin marketplace add Desquared/agents-rules-skills
+claude plugin install accessibility-toolkit@desquared-agent-plugins
+
+# Codex
+codex plugin marketplace add Desquared/agents-rules-skills
+codex plugin add accessibility-toolkit@desquared-agent-plugins
+\`\`\`
+
+Cursor has no install-from-URL command: import this repository once as a team marketplace, or symlink the plugin locally. Full instructions, including how the plugin is built and released, are in [docs/plugin.md](docs/plugin.md).
 
 ### Manual examples (if you prefer curl)
 

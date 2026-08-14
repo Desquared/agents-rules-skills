@@ -1,0 +1,26 @@
+{
+  "name": "accessibility-toolkit",
+  "version": "1.0.0",
+  "description": "Accessibility skills for annotating designs in Figma and implementing accessible iOS, Android, and Flutter UI.",
+  "author": {
+    "name": "Desquared"
+  },
+  "homepage": "https://github.com/Desquared/agents-rules-skills#readme",
+  "repository": "https://github.com/Desquared/agents-rules-skills",
+  "license": "MIT",
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "figma",
+    "ios",
+    "android",
+    "flutter"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Accessibility Toolkit",
+    "developerName": "Desquared",
+    "category": "Productivity"
+  }
+}

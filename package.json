@@ -14,7 +14,8 @@
     "install-agents": "node bin/install-agents.js",
     "install-rules": "node bin/install-rules.js",
     "docs:export": "node bin/export-docs.js",
-    "docs:watch": "node bin/export-docs.js --watch"
+    "docs:watch": "node bin/export-docs.js --watch",
+    "plugin:build": "node bin/build-plugin.js"
   },
   "engines": {
     "node": ">=16.0.0"

@@ -1,0 +1,19 @@
+{
+  "name": "desquared-agent-plugins",
+  "displayName": "Desquared Agent Plugins",
+  "owner": {
+    "name": "Desquared"
+  },
+  "metadata": {
+    "description": "Accessibility and mobile development toolkits for Cursor, Claude Code, and Codex.",
+    "version": "1.0.0",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "accessibility-toolkit",
+      "source": "accessibility-toolkit",
+      "description": "Accessibility skills, agents, and rules for annotating designs in Figma and implementing accessible iOS, Android, and Flutter UI."
+    }
+  ]
+}

@@ -7,7 +7,7 @@ Naming convention:
 - `android-*` for Android skills
 - `ios-*` for iOS skills
 - `flutter-*` for Flutter skills
-- `shared-*` for cross-platform skills
+- `shared-*`, or no prefix at all, for cross-platform skills
 
 Quick navigation:
 
@@ -73,12 +73,52 @@ for skill in android-accessibility-validator android-compose-architecture-review
 done
 ```
 
+## Manual Install
+
+A skill is a folder containing `SKILL.md` plus any reference files it links to. Copy the whole folder — copying only `SKILL.md` breaks skills that reference companion files.
+
+```bash
+# Grab the repository once
+git clone --depth 1 https://github.com/Desquared/agents-rules-skills /tmp/agents-rules-skills
+```
+
+Then copy the skill folder to your tool's skills directory:
+
+| Tool | Global (all projects) | Project-local |
+|---|---|---|
+| **Cursor** | `~/.cursor/skills/<skill-name>/` | `.cursor/skills/<skill-name>/` |
+| **Claude Code** | `~/.claude/skills/<skill-name>/` | `.claude/skills/<skill-name>/` |
+| **Codex** | `~/.codex/skills/<skill-name>/` | `.agents/skills/<skill-name>/` |
+
+```bash
+SKILL=shared-bug-investigation
+
+# Cursor (global)
+mkdir -p ~/.cursor/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" ~/.cursor/skills/
+
+# Claude Code (global)
+mkdir -p ~/.claude/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" ~/.claude/skills/
+
+# Codex (global)
+mkdir -p ~/.codex/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" ~/.codex/skills/
+
+# Codex (checked into a repository, shared with the team)
+mkdir -p .agents/skills
+cp -R /tmp/agents-rules-skills/skills/"$SKILL" .agents/skills/
+```
+
+Restart the tool (or start a new chat) so it picks the skill up.
+
 ## Full Catalog
 
 ### Cross-platform
 
 | Skill | Description | Install | Source |
 |---|---|---|---|
+| accessibility-annotations | Annotate Figma UI screens with accessibility annotations — reading order, tab/focus order, Button, Image alt, Role/Value/Label and More info callouts — using the annotation library configured for the project. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill accessibility-annotations` | [SKILL.md](skills/accessibility-annotations/SKILL.md) |
 | shared-bug-investigation | Scientific method expert for systematic bug investigation and root cause analysis. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-bug-investigation` | [SKILL.md](skills/shared-bug-investigation/SKILL.md) |
 | shared-task-workflow | Generic, project-abstract task workflow orchestrator. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-task-workflow` | [SKILL.md](skills/shared-task-workflow/SKILL.md) |
 
@@ -98,9 +138,9 @@ done
 
 | Skill | Description | Install | Source |
 |---|---|---|---|
-| ios-accessibility-validator | Checks and suggests accessibility improvements for SwiftUI and UIKit code including VoiceOver labels, dynamic type support, and color contrast. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-accessibility-validator` | [SKILL.md](skills/ios-accessibility-validator/SKILL.md) |
-| ios-performance-profiler | Identifies potential performance bottlenecks in SwiftUI code including expensive view updates, unnecessary redraws, and memory issues. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-performance-profiler` | [SKILL.md](skills/ios-performance-profiler/SKILL.md) |
-| ios-swift-api-design-reviewer | Review function and class interfaces for Swift API Design Guidelines compliance. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-swift-api-design-reviewer` | [SKILL.md](skills/ios-swift-api-design-reviewer/SKILL.md) |
+| ios-accessibility-validator | Checks and suggests accessibility improvements for SwiftUI and UIKit code including VoiceOver, Dynamic Type, color contrast, motion, and input methods. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-accessibility-validator` | [SKILL.md](skills/ios-accessibility-validator/SKILL.md) |
+| ios-performance-profiler | Identifies potential performance bottlenecks in SwiftUI code — expensive view body computation, unnecessary redraws, identity instability, concurrency issues, and memory problems. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-performance-profiler` | [SKILL.md](skills/ios-performance-profiler/SKILL.md) |
+| ios-swift-api-design-reviewer | Reviews Swift function, type, and protocol interfaces for alignment with the Swift API Design Guidelines, with emphasis on call-site clarity, naming, parameter labeling, mutability conventions, and modern async/throws patterns. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-swift-api-design-reviewer` | [SKILL.md](skills/ios-swift-api-design-reviewer/SKILL.md) |
 | ios-swiftui-architecture-review | Analyze SwiftUI view hierarchies and suggest MVVM or other architectural improvements. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill ios-swiftui-architecture-review` | [SKILL.md](skills/ios-swiftui-architecture-review/SKILL.md) |
 | swiftui-agent *(by twostraws)* | Use when building SwiftUI views, composing layouts, managing state, or applying modern SwiftUI patterns across iOS, macOS, watchOS, and tvOS apps. | `npx skills add https://github.com/twostraws/SwiftUI-Agent-Skill` | [SKILL.md](https://github.com/twostraws/SwiftUI-Agent-Skill/SKILL.md) |
 | ios-swiftui-expert *(by AvdLee)* | Expert guidance for SwiftUI state management, view composition, performance optimizations, and avoiding redundant updates. | `npx skills add https://github.com/AvdLee/SwiftUI-Agent-Skill --skill swiftui-expert-skill` | [SKILL.md](https://github.com/AvdLee/SwiftUI-Agent-Skill/skills/swiftui-expert-skill/SKILL.md) |
