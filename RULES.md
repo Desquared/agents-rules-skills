@@ -115,3 +115,4 @@ curl -fsSL https://raw.githubusercontent.com/Desquared/agents-rules-skills/main/
 - [android-style.md](rules/android-style.md): Android Style Guide.
 - [android-ux-design-system.md](rules/android-ux-design-system.md): UX & Design System.
 - [android-validation-testing.md](rules/android-validation-testing.md): Validation & Testing.
+- [android-radd-composable-preference.md](android-radd-composable-preference.md): UI building
