@@ -120,6 +120,7 @@ Restart the tool (or start a new chat) so it picks the skill up.
 |---|---|---|---|
 | accessibility-annotations | Annotate Figma UI screens with accessibility annotations — reading order, tab/focus order, Button, Image alt, Role/Value/Label and More info callouts — using the annotation library configured for the project. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill accessibility-annotations` | [SKILL.md](skills/accessibility-annotations/SKILL.md) |
 | shared-bug-investigation | Scientific method expert for systematic bug investigation and root cause analysis. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-bug-investigation` | [SKILL.md](skills/shared-bug-investigation/SKILL.md) |
+| shared-perf-comparison-video | Turn two screen recordings into a polished side-by-side before/after performance video — both launches aligned on one clock, a per-side timer that stops the moment each app is ready, and a summary card of the numbers. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-perf-comparison-video` | [SKILL.md](skills/shared-perf-comparison-video/SKILL.md) |
 | shared-task-workflow | Generic, project-abstract task workflow orchestrator. | `npx skills add https://github.com/Desquared/agents-rules-skills --skill shared-task-workflow` | [SKILL.md](skills/shared-task-workflow/SKILL.md) |
 
 ### Flutter

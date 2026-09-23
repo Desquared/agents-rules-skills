@@ -1,0 +1,37 @@
+{
+  "out": "before-after.mp4",
+  "fps": 48,
+  "crossfade": 0.35,
+
+  "left":  { "file": "before.mov", "word": "Before", "sub": "Old client" },
+  "right": { "file": "after.mov",  "word": "After",  "sub": "New client" },
+
+  "chapters": [
+    {
+      "name":  "Cold start to home",
+      "title": "Cold start  ·  tap the icon → home screen ready",
+      "badge": "home ready",
+      "preroll": 0.75,
+      "tail": 1.6,
+      "left":  { "t0": 0.000, "ready": 0.000 },
+      "right": { "t0": 0.000, "ready": 0.000 }
+    },
+    {
+      "name":  "Opening a detail screen",
+      "title": "Open a detail screen  ·  tap → page ready",
+      "badge": "page ready",
+      "preroll": 0.6,
+      "tail": 1.5,
+      "left":  { "t0": 0.000, "ready": 0.000 },
+      "right": { "t0": 0.000, "ready": 0.000 }
+    }
+  ],
+
+  "outro": {
+    "enabled": true,
+    "seconds": 3.0,
+    "headline": "Same phone. Same account. Same journey.",
+    "sub": "Old client  →  new client",
+    "foot": "device · OS version · release builds"
+  }
+}
