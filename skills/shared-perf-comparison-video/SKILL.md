@@ -1,6 +1,6 @@
 ---
 name: shared-perf-comparison-video
-description: Turn two screen recordings into a polished side-by-side before/after performance video — both launches aligned on one clock, a per-side timer that stops the moment each app is ready, and a summary card of the numbers. Use whenever someone wants to SHOW a performance improvement rather than describe it: a before/after or side-by-side app video, a launch-time or startup-time demo, "how much faster is the new version", proving out a migration or rewrite, or a clip for a team demo, release note or stakeholder update. Also use when someone simply hands over two screen recordings of the same flow and wants them cut together, even if they never say the word "video".
+description: 'Turn two screen recordings into a polished side-by-side before/after performance video — both launches aligned on one clock, a per-side timer that stops the moment each app is ready, and a summary card of the numbers. Use whenever someone wants to SHOW a performance improvement rather than describe it: a before/after or side-by-side app video, a launch-time or startup-time demo, "how much faster is the new version", proving out a migration or rewrite, or a clip for a team demo, release note or stakeholder update. Also use when someone simply hands over two screen recordings of the same flow and wants them cut together, even if they never say the word "video".'
 ---
 
 # Before/after performance video
