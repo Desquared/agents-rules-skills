@@ -15,6 +15,29 @@ attention is deciding **when each app is "ready"**, because that single judgemen
 the entire claim the video makes. Get it wrong and you have produced a confident,
 beautiful, wrong artefact that someone will show to their CTO.
 
+## Render with `make_video.py`. Do not rebuild it.
+
+The house style — white ground, **Before**/**After** columns, phone bodies with the
+screens punched through them, clocks that freeze green, the summary card — exists only
+inside `scripts/make_video.py`. There is no style guide to follow and no way to
+reproduce it by reasoning about it; hand-written ffmpeg produces *a* video with two
+phones in it, which is a different deliverable and gets rejected.
+
+This is not hypothetical. The first time someone else used this skill, the environment
+was not set up, so the model read the guidance, applied the measurement discipline
+correctly, and then improvised its own renderer. The numbers were sound and the result
+was thrown away on sight, because it looked nothing like the thing the team had
+approved. Every minute saved by skipping the setup was lost twice over.
+
+So when something blocks the scripts — no ffmpeg, no Pillow, a venv that will not
+build, an unfamiliar canvas size — **fix the blocker or report it**. Do not route
+around it. If you genuinely cannot run the renderer, say so plainly and hand back the
+measured instants: someone else can render in thirty seconds from a `film.json`, and
+that is far more useful than an off-style video.
+
+Every film this script produces matches the canvas it prints at the end. If your output
+is some other size, it did not come from here.
+
 ## What you need before starting
 
 - **Two screen recordings of the same journey**, one per version/app. They do not need
@@ -24,11 +47,15 @@ beautiful, wrong artefact that someone will show to their CTO.
 - If the person has not recorded yet, read `references/capture.md` first and tell them
   how to capture fairly. A biased recording cannot be rescued in the edit.
 
-Set up the tooling once per working directory:
+Set up the tooling once per working directory — do this **first**, before probing
+anything, so a missing dependency surfaces while it is still cheap to fix:
 
 ```bash
 eval "$(/path/to/skill/scripts/bootstrap.sh)"   # creates a venv, exports PERF_PY
 ```
+
+It checks ffmpeg, builds a throwaway venv with Pillow and numpy, and prints the
+interpreter to use. If it fails it tells you exactly what to install.
 
 ## Pipeline
 
@@ -133,11 +160,21 @@ The person will repeat whatever you tell them to someone who was not in the room
 
 ## Adjusting the look
 
-Layout constants live at the top of `scripts/make_video.py` — canvas, colours, bezel
-radius, label column width, the y positions of the title, words, timers and badges. The
-phone windows size themselves from each recording's own aspect ratio and share a common
-height, so an Android next to an iPhone still looks deliberate. Change the constants
-rather than post-processing the output.
+**Frame shape is a config value, not a reason to start over.** `"canvas"` takes
+`"landscape"` (1920×1080, the default and the house style), `"portrait"` (1080×1350) or
+`"square"` (1080×1080), or an explicit `{"width": W, "height": H}`. Wide frames put the
+words in side columns; tall ones stack them above each phone and give the screens more
+room, which is what you want for Slack or social. Everything else — colours, timers,
+card — is identical across all of them.
+
+Other knobs: `"running_badge"` on a chapter captions a clock while it is still running
+("launching…"), and `"sub"` on a side takes a list for multiple lines, which is where
+build identifiers or branch names belong.
+
+Colours, bezel radius and the y positions live at the top of `scripts/make_video.py`.
+The phone windows size themselves from each recording's own aspect ratio and share a
+common height, so an Android next to an iPhone still looks deliberate. Change the
+constants there rather than post-processing the output.
 
 ## Bundled files
 

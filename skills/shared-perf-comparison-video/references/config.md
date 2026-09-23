@@ -7,6 +7,7 @@ One file describes the whole cut. Paths are relative to the config file.
   "out": "before-after.mp4",     // optional, default before-after.mp4
   "fps": 48,                     // optional, default 48. 48 maps 24fps sources 1:2 with no judder
   "crossfade": 0.35,             // optional, seconds between chapters
+  "canvas": "landscape",         // optional: landscape | portrait | square | {width, height}
 
   "left":  { "file": "before.mov", "word": "Before", "sub": "Native Android" },
   "right": { "file": "after.mov",  "word": "After",  "sub": "Compose Multiplatform" },
@@ -72,6 +73,26 @@ recordings diverge after the first milestone — see `measurement.md`.
   "right": { "t0":  7.917, "ready":  8.750 }
 }
 ```
+
+## Canvas
+
+| Value | Size | Arrangement |
+| --- | --- | --- |
+| `"landscape"` (default) | 1920×1080 | Before/After in outer columns — the house style |
+| `"portrait"` | 1080×1350 | Words above each phone, bigger screens; for Slack and social |
+| `"square"` | 1080×1080 | Same stacked arrangement, square crop |
+| `{"width": W, "height": H}` | yours | Columns if the frame is wide, stacked if tall |
+
+Everything else is identical across canvases, so picking a tall frame is a config change
+rather than a reason to render something bespoke. The script prints the canvas it used; a
+film that is not that size did not come from the script.
+
+## Optional per-chapter and per-side extras
+
+- **`running_badge`** on a chapter captions a clock while it is still counting
+  (`"launching…"`). The `badge` caption replaces it once the clock stops.
+- **`sub`** on a side accepts a list for several lines, which is where build numbers,
+  commits or branch names go: `"sub": ["release 13.3", "0213e2ee"]`.
 
 ## Sources of different sizes
 
