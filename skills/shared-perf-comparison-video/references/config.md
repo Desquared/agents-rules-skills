@@ -27,6 +27,7 @@ One file describes the whole cut. Paths are relative to the config file.
   "outro": {
     "enabled": true,
     "seconds": 3.0,
+    "delta": false,              // optional: also print seconds saved and % under the ratio
     "headline": "Same phone. Same account. Same journey.",
     "sub": "Old client  →  new client",
     "foot": "iPhone 17 Pro · iOS 26.2 · release builds"

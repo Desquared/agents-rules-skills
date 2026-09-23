@@ -294,52 +294,63 @@ def render_outro(cfg, th, rows, path):
     narrow = W < 1400
     img = Image.new("RGB", (W, H), (255, 255, 255))
     d = ImageDraw.Draw(img)
-    f_row = _font(SANS_BOLD, round(0.0370 * H))
-    f_sm = _font(SANS, round(0.0231 * H))
-    f_delta = _font(SANS, round((0.019 if narrow else 0.0231) * H))
-    f_big = _font(SANS_BOLD, round(0.0556 * H))
+    sy0 = H / 1080
+    f_row = _font(SANS_BOLD, round(40 * sy0))
+    f_sm = _font(SANS, round(25 * sy0))
+    f_delta = _font(SANS, round((0.019 * H) if narrow else (25 * sy0)))
+    f_big = _font(SANS_BOLD, round(60 * sy0))
 
+    # The wide card is scaled from the approved 1920x1080 original, so at the default
+    # canvas every value lands back on the exact pixel it was signed off on. Deriving
+    # these from round fractions instead shifted them 1-3px, which is invisible on its
+    # own and still a change to a look somebody already approved.
+    sx, sy = W / 1920, H / 1080
     if narrow:
         x_label = round(0.075 * W)
         x_before, x_arrow, x_after = round(0.530 * W), round(0.605 * W), round(0.685 * W)
         x_big, x_delta = round(0.875 * W), round(0.605 * W)
         rule = (round(0.060 * W), round(0.940 * W))
+        rule_dy, big_dy = round(0.031 * H), round(0.0074 * H)
     else:
-        x_label = round(0.230 * W)
-        x_before, x_arrow, x_after = round(0.560 * W), round(0.605 * W), round(0.655 * W)
-        x_big, x_delta = round(0.740 * W), round(0.740 * W)
-        rule = (round(0.224 * W), round(0.776 * W))
+        x_label = round(440 * sx)
+        x_before, x_arrow, x_after = round(1075 * sx), round(1165 * sx), round(1258 * sx)
+        x_big, x_delta = round(1420 * sx), round(1420 * sx)
+        rule = (round(430 * sx), round(1490 * sx))
+        rule_dy, big_dy = round(34 * sy), round(8 * sy)
 
-    inner = rule[1] - rule[0]
+    # Centred text only has to clear the canvas margin; using the rule width as the
+    # limit was 8px too tight for the approved headline and silently shrank it a point.
+    inner = W - round(120 * sx)
     mid(d, o.get("headline", "Before and after"),
-        fit_font(d, o.get("headline", "Before and after"), SANS_BOLD, round(0.0481 * H), inner),
-        W // 2, round(0.198 * H), INK)
+        fit_font(d, o.get("headline", "Before and after"), SANS_BOLD, round(52 * sy0), inner),
+        W // 2, round(214 * sy0), INK)
     if o.get("sub"):
-        mid(d, o["sub"], fit_font(d, o["sub"], SANS, round(0.0231 * H), inner),
-            W // 2, round(0.270 * H), MUTED)
+        mid(d, o["sub"], fit_font(d, o["sub"], SANS, round(25 * sy0), inner),
+            W // 2, round(292 * sy0), MUTED)
 
-    y, step = round(0.398 * H), round(0.122 * H)
+    y, step = round(430 * sy0), round(132 * sy0)
     label_room = x_before - x_label - round(0.09 * W)
     for r in rows:
-        d.line([(rule[0], y - round(0.031 * H)), (rule[1], y - round(0.031 * H))], fill=HAIR, width=2)
+        d.line([(rule[0], y - rule_dy), (rule[1], y - rule_dy)], fill=HAIR, width=2)
         d.text((x_label, y), r["what"],
-               font=fit_font(d, r["what"], SANS_BOLD, round(0.0370 * H), label_room), fill=INK)
+               font=fit_font(d, r["what"], SANS_BOLD, round(40 * sy0), label_room), fill=INK)
         mid(d, f"{r['before']:.2f}s", f_row, x_before, y, MUTED)
         mid(d, "→", f_row, x_arrow, y, FAINT)
         mid(d, f"{r['after']:.2f}s", f_row, x_after, y, DONE)
         mid(d, r["verdict"].replace(" faster", "").replace(" slower", ""), f_big, x_big,
-            y - round(0.0074 * H), INK)
-        # Signed as a change in duration: getting faster is negative seconds and a
-        # negative percentage. The other convention reads as "2.29s slower".
+            y - big_dy, INK)
+        # Off by default: the card's approved look is the ratio alone. Opt in with
+        # outro.delta when an audience wants seconds saved rather than a multiplier.
+        # Signed as a change in duration, so faster reads as negative seconds.
         delta = r["after"] - r["before"]
-        if abs(r["before"]) > 1e-6:
+        if o.get("delta") and abs(r["before"]) > 1e-6:
             mid(d, f"{delta:+.2f}s ({delta / r['before'] * 100:+.0f}%)", f_delta, x_delta,
-                y + round(0.052 * H), MUTED)
+                y + round(56 * sy0), MUTED)
         y += step
-    d.line([(rule[0], y - round(0.031 * H)), (rule[1], y - round(0.031 * H))], fill=HAIR, width=2)
+    d.line([(rule[0], y - rule_dy), (rule[1], y - rule_dy)], fill=HAIR, width=2)
     if o.get("foot"):
-        mid(d, o["foot"], fit_font(d, o["foot"], SANS, round(0.0231 * H), inner),
-            W // 2, y + round(0.022 * H), FAINT)
+        mid(d, o["foot"], fit_font(d, o["foot"], SANS, round(25 * sy0), inner),
+            W // 2, y + round(24 * sy0), FAINT)
     img.save(path)
 
 
