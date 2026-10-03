@@ -126,6 +126,8 @@ Picture:
 - [ ] Every number on screen came from the facts file, and is true today.
 - [ ] Doodles land on their targets in every frame of their scene (check the stills at the start and
       the end of camera moves).
+- [ ] Every window, phone and card enters at its full size: render stills 0.1 s and 0.25 s into each
+      scene and check nothing is cut off on one side while it fades in.
 - [ ] One idea per scene; each scene's final state holds still for at least 0.8 s.
 - [ ] Promo 40 s or less; tutorial steps match the step dots.
 - [ ] A poster frame is exported (below): the first frame is blank paper by design, so players need one.

@@ -111,7 +111,9 @@ private const val BEZEL = 0.018f
 @Composable
 fun Device(image: ImageBitmap, x: Float, y: Float, height: Float, modifier: Modifier = Modifier, bezel: Boolean = true, island: Boolean = true) {
     val width = deviceWidth(image, height, bezel)
-    Canvas(modifier.at(x, y).size(width.dp, height.dp)) {
+    // Placed first, then [modifier]: an entrance (graphicsLayer) applied before the offset would draw the
+    // phone offscreen at the page origin and clip it to its own size until the fade ends.
+    Canvas(Modifier.at(x, y).then(modifier).size(width.dp, height.dp)) {
         val b = if (bezel) size.height * BEZEL else 0f
         val screen = Rect(b, b, size.width - b, size.height - b)
         if (bezel) drawRoundRect(Ink.ink, cornerRadius = CornerRadius(size.width * 0.15f))
@@ -137,9 +139,12 @@ fun Device(image: ImageBitmap, x: Float, y: Float, height: Float, modifier: Modi
 @Composable
 fun MacWindow(x: Float, y: Float, width: Float, height: Float, title: String, modifier: Modifier = Modifier, content: @Composable () -> Unit) {
     val shape = RoundedCornerShape(12.dp)
+    // Placed first, then [modifier], for the same reason as [Device]: otherwise the window is cut off on the
+    // right while it fades in.
     Column(
-        modifier
+        Modifier
             .at(x, y)
+            .then(modifier)
             .size(width.dp, height.dp)
             .shadow(22.dp, shape, ambientColor = Color(0x33000000), spotColor = Color(0x44000000))
             .background(Ink.card, shape)

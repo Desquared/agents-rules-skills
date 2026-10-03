@@ -104,3 +104,9 @@ Capture resolution must survive the push: source width at least `displayed px x 
 Only one transition exists: the **dissolve with a lift** between scenes (above), with a whoosh under
 it. No wipes, no slides, no zoom-throughs, no 3D. Inside a scene, change happens by dissolving
 footage shots (0.35 s) or morphing before/after (0.45 s).
+
+Anything that enters (a window, a phone, a card) does so whole: it fades and lifts at its full size from
+its first frame. Never let it appear cropped and then widen into place: that reads as a lag. In Compose
+it happens when the entrance (`graphicsLayer`) sits before the offset that places the element; while
+alpha is below 1 the layer is drawn offscreen at the page origin and clipped to the element's own size.
+Place first, then animate: `Modifier.at(x, y).then(modifier)`, as the kit's `Device` and `MacWindow` do.
